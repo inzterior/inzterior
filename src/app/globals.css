@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f1ebde;
+  --bg-panel: #e8e0cf;
+  --bg-card: #fbf8f1;
+  --ink: #23201a;
+  --ink-soft: #5f574b;
+  --line: #d9cfb8;
+  --taupe: #93876e;
+  --accent: #9a4b2b;
+  --accent-soft: #c97a4e;
+}
+
+body {
+  color: var(--ink);
+  background: var(--bg);
+  font-family: var(--font-sans), -apple-system, "Segoe UI", sans-serif;
+}
+
+h1,
+h2,
+h3,
+.font-serif-display {
+  font-family: var(--font-serif), ui-serif, Georgia, serif;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  padding: 0.9rem 1.75rem;
+  font-size: 0.86rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--ink);
+  color: var(--bg);
+}
+.btn-primary:hover {
+  background: var(--accent);
+}
+
+.btn-outline {
+  border: 1px solid var(--ink);
+  color: var(--ink);
+}
+.btn-outline:hover {
+  background: var(--ink);
+  color: var(--bg);
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Inzterior</title>
+<meta name="description" content="Book a consultation with Inzterior, an Iskandar Puteri interior design studio. Email inquiry@inzterior.com.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="logo">INZ<span>TERIOR</span></a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="contact.html" class="nav-cta">Enquire</a>
+    <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+  </div>
+</header>
+
+<section class="hero" style="padding:70px 0 50px;">
+  <div class="wrap" style="display:block;">
+    <span class="eyebrow">Get in Touch</span>
+    <h1 style="max-width:760px;">Let's talk about your space.</h1>
+    <p style="max-width:600px;">Tell us a bit about your project and we'll get back to you to arrange a discovery consultation.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap contact-grid">
+    <div>
+      <div class="info-row">
+        <span class="label">Email</span>
+        <a href="mailto:inquiry@inzterior.com">inquiry@inzterior.com</a>
+      </div>
+      <div class="info-row">
+        <span class="label">Studio Location</span>
+        <span>No. 58A, Jalan Eka 3, Horizon Hills, 79100 Iskandar Puteri, Johor, Malaysia</span>
+      </div>
+      <div class="info-row">
+        <span class="label">Response Time</span>
+        <span>We typically reply within 1–2 business days.</span>
+      </div>
+    </div>
+
+    <form id="enquiry-form">
+      <div class="field-row">
+        <div>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+      </div>
+      <div class="field-row">
+        <div>
+          <label for="phone">Phone (optional)</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+        <div>
+          <label for="project-type">Project Type</label>
+          <select id="project-type" name="project-type">
+            <option value="">Select one</option>
+            <option value="Residential — Full Home">Residential — Full Home</option>
+            <option value="Residential — Single Room">Residential — Single Room</option>
+            <option value="Commercial / Office">Commercial / Office</option>
+            <option value="Renovation">Renovation</option>
+            <option value="Consultation Only">Consultation Only</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <label for="message">Tell us about your space</label>
+        <textarea id="message" name="message" required placeholder="Location, size, budget range, timeline, and what you're hoping to achieve..."></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Send Enquiry</button>
+      <p class="form-status" id="form-status"></p>
+    </form>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>Inzterior</h4>
+        <p>A Malaysian interior design studio based in Iskandar Puteri, working across residential and commercial spaces.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:inquiry@inzterior.com">inquiry@inzterior.com</a></li>
+          <li>Horizon Hills, Iskandar Puteri, Johor</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <span>&copy; 2026 Inzterior. All rights reserved.</span>
+      <span><strong>Inzterior</strong> is the trading name of Istory Design Studio (SSM Reg. No. SA0647003-M).</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
