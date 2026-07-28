@@ -8,6 +8,7 @@ const NAV_LINKS = [
   { href: "/services", label: "Services" },
   { href: "/estimate", label: "Estimate" },
   { href: "/portfolio", label: "Portfolio" },
+  { href: "/team", label: "Our Team" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
@@ -22,12 +23,12 @@ export default function SiteHeader() {
           Inzterior
         </Link>
 
-        <nav className="hidden gap-8 text-sm sm:flex">
+        <nav className="hidden gap-1 text-sm sm:flex">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-[var(--ink-soft)] hover:text-[var(--ink)]"
+              className="rounded-full px-3 py-2 text-[var(--ink-soft)] transition-colors hover:bg-[var(--bg-panel)] hover:text-[var(--ink)]"
             >
               {link.label}
             </Link>
@@ -36,7 +37,7 @@ export default function SiteHeader() {
 
         <Link
           href="/contact"
-          className="hidden border-b border-[var(--ink)] pb-0.5 text-sm hover:border-[var(--accent)] hover:text-[var(--accent)] sm:block"
+          className="hidden border-b border-[var(--ink)] pb-0.5 text-sm transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)] sm:block"
         >
           Enquire
         </Link>
@@ -44,7 +45,7 @@ export default function SiteHeader() {
         <button
           type="button"
           aria-label="Toggle menu"
-          className="text-xl sm:hidden"
+          className="rounded-full px-2 py-1 text-xl transition-colors hover:bg-[var(--bg-panel)] sm:hidden"
           onClick={() => setOpen((v) => !v)}
         >
           ☰
@@ -52,9 +53,14 @@ export default function SiteHeader() {
       </div>
 
       {open && (
-        <nav className="flex flex-col gap-4 border-t border-[var(--line)] px-6 py-6 text-sm sm:hidden">
+        <nav className="flex flex-col gap-1 border-t border-[var(--line)] px-6 py-6 text-sm sm:hidden">
           {NAV_LINKS.map((link) => (
-            <Link key={link.href} href={link.href} onClick={() => setOpen(false)}>
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={() => setOpen(false)}
+              className="rounded-lg px-3 py-2 transition-colors hover:bg-[var(--bg-panel)] hover:text-[var(--accent)]"
+            >
               {link.label}
             </Link>
           ))}
