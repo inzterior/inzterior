@@ -25,7 +25,7 @@ Market research: `admin/research/sg-my-market-research-2026-07-29.md`
 - [x] Portfolio page — real, finished page copy (gallery photos still pending, but page itself is not boilerplate)
 - [x] Services page — real copy, six defined service lines
 - [x] Terms page (`/terms`) — payment structure, written contract, warranty, legal identity, entity-type disclosure (shipped 2026-07-29). Milestone percentages and final warranty duration are placeholders pending the Phase 0 decision in the game plan.
-- [ ] Deploy to production (not deployed anywhere yet — game plan Phase 1.1, blocks everything else being publicly visible)
+- [x] Deploy to production — live at https://inzterior-lac.vercel.app (2026-07-30). Custom domain (inzterior.com) and GitHub auto-deploy still pending — see Notes.
 
 ## 3. Business & Content
 - [ ] Portfolio photos / case studies collected
@@ -89,3 +89,4 @@ Market research: `admin/research/sg-my-market-research-2026-07-29.md`
 - Website dev status can be auto-checked against the repo (commits, page content) during the daily review; other sections are manually updated unless pointed at a data source.
 - Finance ledger: local source of truth is `admin/finance/Inzterior-Finance.xlsx` (Overview, Income, Expenses sheets). Mirrored as a native Google Sheet — "Inzterior — Finance Ledger" — under inquiry.guidesbooks@gmail.com: https://docs.google.com/spreadsheets/d/1aV7m_0TQFyrsgWtyz2mM-gpdsQqDPKk-6sAiEb_4lxI/edit
 - Stray file to clean up: an earlier upload attempt (`Inzterior — Finance Ledger.xlsx`, plain xlsx, not a native Sheet) landed under inzterior.my@gmail.com's Drive by mistake — safe to delete from that account.
+- Deployment (2026-07-30): shipped via direct Vercel CLI upload, not a GitHub-linked project — the auto-connect step failed because the Vercel account has no GitHub login connection yet (Account Settings → Login Connections, one-time manual step). Until that's done, future site updates need a manual `vercel --prod` redeploy rather than deploying automatically on push. Custom domain `inzterior.com` is also not yet pointed at the deployment — needs a DNS change at the registrar.
