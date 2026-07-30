@@ -9,17 +9,34 @@ export type LeadInput = {
   details?: string;
 };
 
+const PEM_BEGIN = "-----BEGIN PRIVATE KEY-----";
+const PEM_END = "-----END PRIVATE KEY-----";
+
+// Reconstructs a canonical PEM from whatever whitespace/line-break mangling
+// happened in transit (env var UIs are inconsistent about preserving
+// newlines in pasted multi-line values). As long as the header/footer
+// markers and the base64 body between them are intact, this rebuilds a
+// structurally valid key regardless of how the newlines got scrambled.
 function normalizePrivateKey(raw: string) {
   let key = raw.trim();
-  // Strip wrapping quotes — a common copy-paste mistake when pulling the
-  // value out of the downloaded service account JSON file.
   if (
     (key.startsWith('"') && key.endsWith('"')) ||
     (key.startsWith("'") && key.endsWith("'"))
   ) {
     key = key.slice(1, -1);
   }
-  return key.replace(/\\n/g, "\n").replace(/\r\n/g, "\n");
+  key = key.replace(/\\n/g, "\n");
+
+  const beginIdx = key.indexOf(PEM_BEGIN);
+  const endIdx = key.indexOf(PEM_END);
+  if (beginIdx === -1 || endIdx === -1) {
+    return key;
+  }
+
+  const body = key.slice(beginIdx + PEM_BEGIN.length, endIdx).replace(/\s+/g, "");
+  const wrapped = body.match(/.{1,64}/g)?.join("\n") ?? body;
+
+  return `${PEM_BEGIN}\n${wrapped}\n${PEM_END}\n`;
 }
 
 function getSheetsAuth() {
