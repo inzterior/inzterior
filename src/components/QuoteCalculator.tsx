@@ -21,6 +21,7 @@ export default function QuoteCalculator() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [leadStatus, setLeadStatus] = useState<{ message: string; ok: boolean } | null>(null);
+  const [submitting, setSubmitting] = useState(false);
 
   const estimate = useMemo(
     () => calculateEstimate({ projectType, scope, tier, sqft }),
@@ -29,7 +30,7 @@ export default function QuoteCalculator() {
 
   const scopeNote = SCOPES.find((s) => s.id === scope)?.note;
 
-  function handleEmailEstimate(e: FormEvent<HTMLFormElement>) {
+  async function handleEmailEstimate(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (!name.trim() || !email.trim()) {
       setLeadStatus({ message: "Please fill in your name and email.", ok: false });
@@ -40,27 +41,50 @@ export default function QuoteCalculator() {
     const scopeLabel = SCOPES.find((s) => s.id === scope)?.label ?? scope;
     const tierLabel = TIERS.find((t) => t.id === tier)?.label ?? tier;
 
-    const subject = encodeURIComponent(`Estimate Request — ${projectLabel} — ${name}`);
-    const bodyLines = [
-      `Name: ${name}`,
-      `Email: ${email}`,
-      "",
+    const details = [
       `Project type: ${projectLabel}`,
       `Scope: ${scopeLabel}`,
       `Finish tier: ${tierLabel}`,
       `Size: ${sqft} sqft`,
       "",
       `Estimated range: ${formatMYR(estimate.low)} – ${formatMYR(estimate.high)}`,
-      "",
-      "Note: this is a preliminary estimate, not a fixed quote. The exact price will be documented in a written contract after a free discovery consultation.",
-    ];
-    const body = encodeURIComponent(bodyLines.join("\n"));
-    window.location.href = `mailto:inquiry@inzterior.com?subject=${subject}&body=${body}`;
+    ].join("\n");
 
-    setLeadStatus({
-      message: "Opening your email app to send this estimate to inquiry@inzterior.com...",
-      ok: true,
-    });
+    setSubmitting(true);
+    setLeadStatus(null);
+
+    try {
+      const res = await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          source: "Estimate Calculator",
+          name,
+          email,
+          details,
+        }),
+      });
+
+      if (!res.ok) {
+        const body = await res.json().catch(() => null);
+        throw new Error(body?.error || "Something went wrong.");
+      }
+
+      setLeadStatus({
+        message: "Thanks — we've got your estimate request and will follow up soon.",
+        ok: true,
+      });
+    } catch (err) {
+      setLeadStatus({
+        message:
+          err instanceof Error
+            ? err.message
+            : "Something went wrong. Please email inquiry@inzterior.com directly.",
+        ok: false,
+      });
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -194,9 +218,10 @@ export default function QuoteCalculator() {
           </div>
           <button
             type="submit"
-            className="w-fit rounded bg-neutral-900 px-6 py-3 text-xs uppercase tracking-wide text-white"
+            disabled={submitting}
+            className="w-fit rounded bg-neutral-900 px-6 py-3 text-xs uppercase tracking-wide text-white disabled:opacity-50"
           >
-            Email Me This Estimate
+            {submitting ? "Sending..." : "Email Me This Estimate"}
           </button>
           {leadStatus && (
             <p className={`text-sm ${leadStatus.ok ? "text-emerald-700" : "text-red-700"}`}>

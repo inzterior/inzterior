@@ -4,8 +4,9 @@ import { useState, type FormEvent } from "react";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<{ message: string; ok: boolean } | null>(null);
+  const [submitting, setSubmitting] = useState(false);
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
@@ -20,22 +21,40 @@ export default function ContactForm() {
       return;
     }
 
-    const subject = encodeURIComponent(`New Enquiry — ${projectType || "General"} — ${name}`);
-    const bodyLines = [
-      `Name: ${name}`,
-      `Email: ${email}`,
-      `Phone: ${phone || "-"}`,
-      `Project type: ${projectType || "-"}`,
-      "",
-      message,
-    ];
-    const body = encodeURIComponent(bodyLines.join("\n"));
-    window.location.href = `mailto:inquiry@inzterior.com?subject=${subject}&body=${body}`;
+    setSubmitting(true);
+    setStatus(null);
 
-    setStatus({
-      message: "Opening your email app to send this enquiry to inquiry@inzterior.com...",
-      ok: true,
-    });
+    try {
+      const res = await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          source: "Contact Form",
+          name,
+          email,
+          phone,
+          details: `Project type: ${projectType || "-"}\n\n${message}`,
+        }),
+      });
+
+      if (!res.ok) {
+        const body = await res.json().catch(() => null);
+        throw new Error(body?.error || "Something went wrong.");
+      }
+
+      form.reset();
+      setStatus({ message: "Thanks — we've got your enquiry and will be in touch soon.", ok: true });
+    } catch (err) {
+      setStatus({
+        message:
+          err instanceof Error
+            ? err.message
+            : "Something went wrong. Please email inquiry@inzterior.com directly.",
+        ok: false,
+      });
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -114,9 +133,10 @@ export default function ContactForm() {
 
       <button
         type="submit"
-        className="w-fit rounded bg-neutral-900 px-6 py-3 text-xs uppercase tracking-wide text-white"
+        disabled={submitting}
+        className="w-fit rounded bg-neutral-900 px-6 py-3 text-xs uppercase tracking-wide text-white disabled:opacity-50"
       >
-        Send Enquiry
+        {submitting ? "Sending..." : "Send Enquiry"}
       </button>
 
       {status && (
