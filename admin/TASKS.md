@@ -35,7 +35,7 @@ Market research: `admin/research/sg-my-market-research-2026-07-29.md`
 - [ ] Client leads pipeline started
 - [ ] Trademark / name protection for "Inzterior" (game plan Phase 1.9 — long lead time, start early)
 - [ ] Supplier / contractor relationships (furniture, materials, subcontracted trades)
-- [ ] Terms of service / privacy policy for website — legal boilerplate, distinct from the `/terms` trust page
+- [x] Terms of service / privacy policy for website — legal boilerplate shipped at `/terms-of-service` and `/privacy-policy` (2026-07-30), linked from footer. Both pages flag themselves as unreviewed templates — still needs a pass from a Malaysian lawyer before treating as final.
 - [ ] Standard client contract covering scope, payment terms, liability — needs real legal drafting (game plan Phase 1.10)
 - [ ] Warranty structure decision (keep 6mo flat / extend to 12mo / split 12mo carpentry–6mo wet works) — Billy + Fuyi, game plan Phase 0.1
 - [ ] Deposit ladder finalized — percentages per milestone + retention — Billy + Fuyi, game plan Phase 0.2

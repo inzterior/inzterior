@@ -33,8 +33,16 @@ export default function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-2 border-t border-white/10 pt-6 text-xs text-[#8c816d] sm:flex-row sm:justify-between">
+        <div className="mt-12 flex flex-col gap-4 border-t border-white/10 pt-6 text-xs text-[#8c816d] sm:flex-row sm:items-center sm:justify-between">
           <span>&copy; 2026 Inzterior. All rights reserved.</span>
+          <span className="flex gap-4">
+            <Link href="/terms-of-service" className="hover:text-[#c9bea9]">
+              Terms of Service
+            </Link>
+            <Link href="/privacy-policy" className="hover:text-[#c9bea9]">
+              Privacy Policy
+            </Link>
+          </span>
           <span>
             <strong className="text-[#c9bea9]">Inzterior</strong> is the trading name of Istory
             Design Studio (SSM Reg. No. SA0647003-M).
