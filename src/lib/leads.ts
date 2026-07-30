@@ -9,9 +9,23 @@ export type LeadInput = {
   details?: string;
 };
 
+function normalizePrivateKey(raw: string) {
+  let key = raw.trim();
+  // Strip wrapping quotes — a common copy-paste mistake when pulling the
+  // value out of the downloaded service account JSON file.
+  if (
+    (key.startsWith('"') && key.endsWith('"')) ||
+    (key.startsWith("'") && key.endsWith("'"))
+  ) {
+    key = key.slice(1, -1);
+  }
+  return key.replace(/\\n/g, "\n").replace(/\r\n/g, "\n");
+}
+
 function getSheetsAuth() {
-  const email = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
-  const key = process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, "\n");
+  const email = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL?.trim();
+  const rawKey = process.env.GOOGLE_PRIVATE_KEY;
+  const key = rawKey ? normalizePrivateKey(rawKey) : undefined;
 
   if (!email || !key) {
     throw new Error(
