@@ -26,6 +26,7 @@ Market research: `admin/research/sg-my-market-research-2026-07-29.md`
 - [x] Services page — real copy, six defined service lines
 - [x] Terms page (`/terms`) — payment structure, written contract, warranty, legal identity, entity-type disclosure (shipped 2026-07-29). Milestone percentages and final warranty duration are placeholders pending the Phase 0 decision in the game plan.
 - [x] Deploy to production — live at https://inzterior-lac.vercel.app (2026-07-30). Custom domain (inzterior.com) and GitHub auto-deploy still pending — see Notes.
+- [ ] Point inzterior.com to the Vercel deployment — registrar DNS change, needs Fuyi's Namecheap login (see Notes for exact steps)
 
 ## 3. Business & Content
 - [ ] Portfolio photos / case studies collected
@@ -90,3 +91,4 @@ Market research: `admin/research/sg-my-market-research-2026-07-29.md`
 - Finance ledger: local source of truth is `admin/finance/Inzterior-Finance.xlsx` (Overview, Income, Expenses sheets). Mirrored as a native Google Sheet — "Inzterior — Finance Ledger" — under inquiry.guidesbooks@gmail.com: https://docs.google.com/spreadsheets/d/1aV7m_0TQFyrsgWtyz2mM-gpdsQqDPKk-6sAiEb_4lxI/edit
 - Stray file to clean up: an earlier upload attempt (`Inzterior — Finance Ledger.xlsx`, plain xlsx, not a native Sheet) landed under inzterior.my@gmail.com's Drive by mistake — safe to delete from that account.
 - Deployment (2026-07-30): shipped via direct Vercel CLI upload, not a GitHub-linked project — the auto-connect step failed because the Vercel account has no GitHub login connection yet (Account Settings → Login Connections, one-time manual step). Until that's done, future site updates need a manual `vercel --prod` redeploy rather than deploying automatically on push. Custom domain `inzterior.com` is also not yet pointed at the deployment — needs a DNS change at the registrar.
+- Domain DNS (2026-07-30): `inzterior.com` is registered with Namecheap (nameservers `dns1/dns2.registrar-servers.com`) and currently points to a Namecheap parking page (`216.198.79.1`), not Vercel. Requires manual steps neither Claude nor an agent can complete headlessly (registrar login + interactive domain verification): (1) Vercel dashboard → `invoice-now-check` team → `inzterior` project → Settings → Domains → Add `inzterior.com`, note the A/CNAME records Vercel shows; (2) Namecheap → Domain List → `inzterior.com` → Advanced DNS → replace the parking A record with Vercel's values; (3) allow propagation (minutes to a couple hours).
