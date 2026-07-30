@@ -73,14 +73,24 @@ export async function appendLeadToSheet(lead: LeadInput) {
   if (!spreadsheetId) {
     throw new Error("Missing GOOGLE_SHEET_ID environment variable.");
   }
-  const sheetName = process.env.GOOGLE_SHEET_NAME || "Leads";
+  let sheetName = (process.env.GOOGLE_SHEET_NAME || "Leads").trim();
+  if (
+    (sheetName.startsWith('"') && sheetName.endsWith('"')) ||
+    (sheetName.startsWith("'") && sheetName.endsWith("'"))
+  ) {
+    sheetName = sheetName.slice(1, -1);
+  }
 
   const sheets = google.sheets({ version: "v4", auth: getSheetsAuth() });
   const timestamp = new Date().toISOString();
+  const range = `${sheetName}!A:F`;
+
+  // Temporary diagnostic — the resolved range string isn't secret.
+  console.log("Sheets append range diagnostic", { sheetName, range });
 
   await sheets.spreadsheets.values.append({
     spreadsheetId,
-    range: `${sheetName}!A:F`,
+    range,
     valueInputOption: "USER_ENTERED",
     insertDataOption: "INSERT_ROWS",
     requestBody: {
