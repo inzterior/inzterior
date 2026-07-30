@@ -50,17 +50,6 @@ function getSheetsAuth() {
     );
   }
 
-  // Temporary diagnostic — logs only non-secret shape info (length, line
-  // count, and the boilerplate PEM markers), never the key material itself.
-  console.log("GOOGLE_PRIVATE_KEY diagnostic", {
-    length: key.length,
-    lineCount: key.split("\n").length,
-    startsWithHeader: key.startsWith("-----BEGIN PRIVATE KEY-----"),
-    endsWithFooter: key.trim().endsWith("-----END PRIVATE KEY-----"),
-    first20: key.slice(0, 20),
-    last20: key.slice(-20),
-  });
-
   return new google.auth.JWT({
     email,
     key,
@@ -84,9 +73,6 @@ export async function appendLeadToSheet(lead: LeadInput) {
   const sheets = google.sheets({ version: "v4", auth: getSheetsAuth() });
   const timestamp = new Date().toISOString();
   const range = `${sheetName}!A:F`;
-
-  // Temporary diagnostic — the resolved range string isn't secret.
-  console.log("Sheets append range diagnostic", { sheetName, range });
 
   await sheets.spreadsheets.values.append({
     spreadsheetId,
