@@ -42,3 +42,5 @@ next-env.d.ts
 
 # sensitive business data — never commit
 admin/finance/
+
+.vercel
