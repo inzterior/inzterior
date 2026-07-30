@@ -60,7 +60,7 @@ h1{
 .stat .n{ font-size:22px; font-weight:600; font-variant-numeric:tabular-nums; }
 .stat .l{ font-size:12px; color:var(--ink-2); margin-top:2px; }
 .bar-row{
-  display:flex; align-items:center; gap:10px; margin-bottom:2.25rem;
+  display:flex; align-items:center; gap:10px; margin-bottom:1rem;
 }
 .bar-track{
   flex:1; height:8px; border-radius:99px; background:var(--pending-bg);
@@ -68,6 +68,13 @@ h1{
 }
 .bar-fill{ height:100%; background:var(--accent); border-radius:99px; }
 .bar-pct{ font-size:13px; font-weight:600; font-variant-numeric:tabular-nums; color:var(--ink-2); min-width:34px; text-align:right; }
+.bar-note{ font-size:12px; color:var(--ink-3); margin:0 0 2.25rem; line-height:1.5; }
+
+.plan-link{
+  display:block; background:var(--surface); border:0.5px solid var(--border); border-radius:12px;
+  padding:0.85rem 1.1rem; margin-bottom:2rem; font-size:13px; color:var(--ink-2);
+}
+.plan-link strong{ color:var(--ink); }
 
 .cat{
   background:var(--surface); border:0.5px solid var(--border); border-radius:12px;
@@ -111,14 +118,19 @@ h1{
   <p class="sub">Personal tracker — not part of the website. Source: <code>admin/TASKS.md</code></p>
 
   <div class="overview">
-    <div class="stat"><div class="n">14 / 34</div><div class="l">Items complete</div></div>
-    <div class="stat"><div class="n">1 / 6</div><div class="l">Categories done</div></div>
-    <div class="stat"><div class="n">5 / 6 pages</div><div class="l">Website copy done, not deployed</div></div>
+    <div class="stat"><div class="n">15 / 54</div><div class="l">Items complete</div></div>
+    <div class="stat"><div class="n">1 / 9</div><div class="l">Categories done</div></div>
+    <div class="stat"><div class="n">6 / 7 pages</div><div class="l">Website copy done, not deployed</div></div>
   </div>
 
   <div class="bar-row">
-    <div class="bar-track"><div class="bar-fill" style="width:41%"></div></div>
-    <div class="bar-pct">41%</div>
+    <div class="bar-track"><div class="bar-fill" style="width:28%"></div></div>
+    <div class="bar-pct">28%</div>
+  </div>
+  <p class="bar-note">Item count jumped from 34 to 54 on 2026-07-29 — the market research and H2 game plan broke vague items into concrete ones and added 3 new categories. The percentage looks lower; the work done didn't shrink, the checklist got more honest.</p>
+
+  <div class="plan-link">
+    <strong>H2 2026 game plan</strong> now live: <code>admin/game-plan-2026-h2.md</code> — phased Aug 1–Dec 31 plan, cross-referenced against this dashboard. Market research behind it: <code>admin/research/sg-my-market-research-2026-07-29.md</code>.
   </div>
 
   <div class="cat">
@@ -138,29 +150,33 @@ h1{
   <div class="cat">
     <div class="cat-head">
       <div class="cat-title">2. Website development</div>
-      <div class="cat-frac">5 / 6</div>
+      <div class="cat-frac">6 / 7</div>
     </div>
     <div class="item done"><div class="chk done"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.2 11.5L13 4.5" stroke="#3F7A4E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">About page — real copy (trust points, SSM reg. no., studio address)</div></div>
     <div class="item done"><div class="chk done"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.2 11.5L13 4.5" stroke="#3F7A4E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Contact page — real copy + working contact form</div></div>
     <div class="item done"><div class="chk done"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.2 11.5L13 4.5" stroke="#3F7A4E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Estimate page — real copy + working quote calculator</div></div>
     <div class="item done"><div class="chk done"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.2 11.5L13 4.5" stroke="#3F7A4E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Portfolio page — real copy (gallery photos still pending)</div></div>
     <div class="item done"><div class="chk done"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.2 11.5L13 4.5" stroke="#3F7A4E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Services page — real copy, six defined service lines</div></div>
+    <div class="item done"><div class="chk done"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.2 11.5L13 4.5" stroke="#3F7A4E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Terms page (/terms) — payments, contract, warranty, legal identity (milestone %'s + final warranty length still placeholder)</div></div>
     <div class="item pending"><div class="chk pending"></div><div class="item-text">Deploy to production — not deployed anywhere yet</div></div>
   </div>
 
   <div class="cat">
     <div class="cat-head">
       <div class="cat-title">3. Business &amp; content</div>
-      <div class="cat-frac">0 / 8</div>
+      <div class="cat-frac">0 / 11</div>
     </div>
     <div class="item pending"><div class="chk pending"></div><div class="item-text">Portfolio photos / case studies collected</div></div>
     <div class="item pending"><div class="chk pending"></div><div class="item-text">Copywriting for all pages</div></div>
-    <div class="item pending"><div class="chk pending"></div><div class="item-text">Estimate / pricing logic defined</div></div>
+    <div class="item pending"><div class="chk pending"></div><div class="item-text">Estimate / pricing logic defined — blocked on real project data from Billy</div></div>
     <div class="item pending"><div class="chk pending"></div><div class="item-text">Client leads pipeline started</div></div>
     <div class="item pending"><div class="chk pending"></div><div class="item-text">Trademark / name protection for "Inzterior"</div></div>
     <div class="item pending"><div class="chk pending"></div><div class="item-text">Supplier / contractor relationships</div></div>
-    <div class="item pending"><div class="chk pending"></div><div class="item-text">Terms of service / privacy policy for website</div></div>
-    <div class="item pending"><div class="chk pending"></div><div class="item-text">Standard client contract (scope, payment, liability)</div></div>
+    <div class="item pending"><div class="chk pending"></div><div class="item-text">Terms of service / privacy policy for website (legal boilerplate, distinct from /terms)</div></div>
+    <div class="item pending"><div class="chk pending"></div><div class="item-text">Standard client contract (scope, payment, liability) — needs real legal drafting</div></div>
+    <div class="item pending"><div class="chk pending"></div><div class="item-text">Warranty structure decision — Billy + Fuyi</div></div>
+    <div class="item pending"><div class="chk pending"></div><div class="item-text">Deposit ladder finalized — percentages + retention — Billy + Fuyi</div></div>
+    <div class="item pending"><div class="chk pending"></div><div class="item-text">Referral mechanic drafted (credit or warranty-extension, not cash)</div></div>
   </div>
 
   <div class="cat">
@@ -182,27 +198,64 @@ h1{
   <div class="cat">
     <div class="cat-head">
       <div class="cat-title">5. Social media</div>
-      <div class="cat-frac">0 / 3</div>
+      <div class="cat-frac">0 / 7</div>
     </div>
-    <div class="item pending"><div class="chk pending"></div><div class="item-text">Content pipeline / workflow defined (new, separate from GuidesBooks)</div></div>
+    <div class="item pending"><div class="chk pending"></div><div class="item-text">Content pipeline / workflow defined</div></div>
     <div class="item pending"><div class="chk pending"></div><div class="item-text">Profile branding / bio completed on each platform</div></div>
     <div class="item pending"><div class="chk pending"></div><div class="item-text">First posts scheduled</div></div>
+    <div class="item pending"><div class="chk pending"></div><div class="item-text">Instagram: carousel case studies + trust Highlights launched</div></div>
+    <div class="item pending"><div class="chk pending"></div><div class="item-text">Facebook: long-form + local group presence launched</div></div>
+    <div class="item pending"><div class="chk pending"></div><div class="item-text">Xiaohongshu: 装修全记录 posts launched (needs Chinese-fluent owner)</div></div>
+    <div class="item pending"><div class="chk pending"></div><div class="item-text">TikTok: cost-explainer / site-walk series launched, Billy on camera</div></div>
   </div>
 
   <div class="cat">
     <div class="cat-head">
       <div class="cat-title">6. Marketing</div>
-      <div class="cat-frac">0 / 1</div>
+      <div class="cat-frac">0 / 3</div>
     </div>
     <div class="item pending"><div class="chk pending"></div><div class="item-text">Google Business Profile listing</div></div>
+    <div class="item pending"><div class="chk pending"></div><div class="item-text">Review-request ritual installed into handover process</div></div>
+    <div class="item pending"><div class="chk pending"></div><div class="item-text">Google review count target: 30 dated, photo-attached reviews</div></div>
+  </div>
+
+  <div class="cat">
+    <div class="cat-head">
+      <div class="cat-title">7. Trust &amp; reputation assets</div>
+      <div class="cat-frac">0 / 4</div>
+    </div>
+    <div class="item pending"><div class="chk pending"></div><div class="item-text">Comparison worksheet (blank competitor columns, ours pre-filled)</div></div>
+    <div class="item pending"><div class="chk pending"></div><div class="item-text">Due-diligence checklist page ("how to check any firm")</div></div>
+    <div class="item pending"><div class="chk pending"></div><div class="item-text">Cost-anatomy page (% breakdown by trade)</div></div>
+    <div class="item pending"><div class="chk pending"></div><div class="item-text">Sample contract PDF (depends on real legal draft)</div></div>
+  </div>
+
+  <div class="cat">
+    <div class="cat-head">
+      <div class="cat-title">8. Content engine &amp; case studies</div>
+      <div class="cat-frac">0 / 4</div>
+    </div>
+    <div class="item pending"><div class="chk pending"></div><div class="item-text">Milestone-photo habit started on every live job</div></div>
+    <div class="item pending"><div class="chk pending"></div><div class="item-text">3 case studies rebuilt in the new record format</div></div>
+    <div class="item pending"><div class="chk pending"></div><div class="item-text">Johor-climate/technical content series</div></div>
+    <div class="item pending"><div class="chk pending"></div><div class="item-text">"One year later" project revisit (conditional on project age)</div></div>
+  </div>
+
+  <div class="cat">
+    <div class="cat-head">
+      <div class="cat-title">9. Team</div>
+      <div class="cat-frac">0 / 2</div>
+    </div>
+    <div class="item pending"><div class="chk pending"></div><div class="item-text">Add Jackie Yap to /team page — pending role, bio, headshot</div></div>
+    <div class="item pending"><div class="chk pending"></div><div class="item-text">Confirm Fuyi's public-facing status</div></div>
   </div>
 
   <div class="notes">
-    <strong>Notes.</strong> Accounting/admin and social media items are placeholders — refine into specific line items once the tracking source is confirmed (invoicing tool, registration steps, content calendar). Website dev status is checkable against the repo automatically; other sections update manually unless a data source is pointed out. Finance ledger: <code>admin/finance/Inzterior-Finance.xlsx</code>, mirrored as a Google Sheet under inquiry.guidesbooks@gmail.com.
+    <strong>Notes.</strong> Item count grew from 34 to 54 on 2026-07-29 when the market research and H2 game plan broke vague items into concrete ones and added categories 7–9. Accounting/admin and social media items refine further once specific tools are chosen. Website dev status is checkable against the repo automatically; other sections update manually. Finance ledger: <code>admin/finance/Inzterior-Finance.xlsx</code>, mirrored as a Google Sheet under inquiry.guidesbooks@gmail.com.
   </div>
 
   <div class="footer">
-    <span>Last updated 2026-07-28</span>
+    <span>Last updated 2026-07-30</span>
     <span>admin/TASKS.md</span>
   </div>
 </div>

@@ -2,8 +2,10 @@
 
 > Personal tracking only. Not part of the website. Source of truth for the daily 8am SGT check.
 
-Last updated: 2026-07-28
+Last updated: 2026-07-30
 Dashboard artifact: https://claude.ai/code/artifact/44fe990a-b099-47c5-a22e-21a8379abfc5 (source: `admin/dashboard.html`, republish with this `url` to keep the link stable)
+Game plan: `admin/game-plan-2026-h2.md` (Aug 1 – Dec 31 2026, phased)
+Market research: `admin/research/sg-my-market-research-2026-07-29.md`
 
 ---
 
@@ -22,22 +24,26 @@ Dashboard artifact: https://claude.ai/code/artifact/44fe990a-b099-47c5-a22e-21a8
 - [x] Estimate page — real copy + working quote calculator component
 - [x] Portfolio page — real, finished page copy (gallery photos still pending, but page itself is not boilerplate)
 - [x] Services page — real copy, six defined service lines
-- [ ] Deploy to production (not deployed anywhere yet)
+- [x] Terms page (`/terms`) — payment structure, written contract, warranty, legal identity, entity-type disclosure (shipped 2026-07-29). Milestone percentages and final warranty duration are placeholders pending the Phase 0 decision in the game plan.
+- [ ] Deploy to production (not deployed anywhere yet — game plan Phase 1.1, blocks everything else being publicly visible)
 
 ## 3. Business & Content
 - [ ] Portfolio photos / case studies collected
 - [ ] Copywriting for all pages
-- [ ] Estimate/pricing logic defined
+- [ ] Estimate/pricing logic defined — blocked on real completed-project data from Billy (game plan Phase 0.3 → 2.7)
 - [ ] Client leads pipeline started
-- [ ] Trademark / name protection for "Inzterior"
+- [ ] Trademark / name protection for "Inzterior" (game plan Phase 1.9 — long lead time, start early)
 - [ ] Supplier / contractor relationships (furniture, materials, subcontracted trades)
-- [ ] Terms of service / privacy policy for website
-- [ ] Standard client contract covering scope, payment terms, liability
+- [ ] Terms of service / privacy policy for website — legal boilerplate, distinct from the `/terms` trust page
+- [ ] Standard client contract covering scope, payment terms, liability — needs real legal drafting (game plan Phase 1.10)
+- [ ] Warranty structure decision (keep 6mo flat / extend to 12mo / split 12mo carpentry–6mo wet works) — Billy + Fuyi, game plan Phase 0.1
+- [ ] Deposit ladder finalized — percentages per milestone + retention — Billy + Fuyi, game plan Phase 0.2
+- [ ] Referral mechanic drafted (credit or warranty-extension model, not cash — game plan Phase 2.10)
 
 ## 4. Accounting & Admin
 - [x] Business registration
 - [ ] Company bank account & credit card registration
-- [ ] Invoicing setup
+- [ ] Invoicing setup — needed before first client under the new staged-payment structure
 - [ ] Contract / agreement templates
 - [ ] Tax & compliance tracking
 - [ ] Business insurance (professional/public liability)
@@ -49,14 +55,37 @@ Dashboard artifact: https://claude.ai/code/artifact/44fe990a-b099-47c5-a22e-21a8
 - [ ] Content pipeline/workflow defined (new — separate from GuidesBooks workflow)
 - [ ] Profile branding/bio completed on each platform
 - [ ] First posts scheduled
+- [ ] Instagram: carousel case studies + trust-architecture Highlights (Terms/Payments/Warranty/Site Notes) launched
+- [ ] Facebook: long-form posts + local group presence launched
+- [ ] Xiaohongshu: 装修全记录 posts launched — needs a Chinese-fluent content owner assigned
+- [ ] TikTok: "what this actually costs" / site-walk / "ask before you sign" series launched, Billy on camera
 
 ## 6. Marketing
 - [ ] Google Business Profile listing
+- [ ] Review-request ritual installed into the handover process (operational, not a webpage)
+- [ ] Google review count target: 30 dated, photo-attached reviews by end of 2026
+
+## 7. Trust & Reputation Assets
+- [ ] Comparison worksheet — one page, blank competitor columns, Inzterior's pre-filled (highest-leverage single asset per research)
+- [ ] Due-diligence checklist page ("how to check any firm — including us")
+- [ ] Cost-anatomy page — percentage cost breakdown by trade, no absolute figures
+- [ ] Sample contract PDF — depends on the real legal draft in §3 existing first
+
+## 8. Content Engine & Case Studies
+- [ ] Milestone-photo habit started on every live job (operational — start immediately, can't be started retroactively)
+- [ ] 3 case studies rebuilt in the new record format (constraint → decisions → timeline → cost split → milestone photos)
+- [ ] Johor-climate/technical content series (humidity/joinery, west-facing heat load, termite/wet-area detailing)
+- [ ] "One year later" project revisit — conditional on a qualifying project existing (6+ months post-handover)
+
+## 9. Team
+- [ ] Add Jackie Yap to `/team` page — pending role, bio, headshot, public-facing preference
+- [ ] Confirm Fuyi's public-facing status (team page appearance or strategy-only)
 
 ---
 
 ## Notes
-- Accounting/admin and social media items are placeholders — refine into specific line items once you confirm what needs tracking (e.g. actual invoicing tool, registration steps, content calendar structure).
-- Website dev status can be auto-checked against the repo (commits, page content) during the daily review; other sections are manually updated by you unless you point me at a data source (e.g. a folder, tool, or tracker) to check automatically.
+- Item count grew from 34 to 54 between 2026-07-28 and 2026-07-29 because the market research and game plan broke several vague line items (e.g. "pricing logic defined") into concrete, ownable tasks and surfaced three new categories (Trust & Reputation Assets, Content Engine & Case Studies, Team) that didn't exist as line items before. The completion percentage will look like it dropped — that's the denominator changing, not lost progress.
+- Accounting/admin items refine further once specific tools are chosen (invoicing platform, registration steps).
+- Website dev status can be auto-checked against the repo (commits, page content) during the daily review; other sections are manually updated unless pointed at a data source.
 - Finance ledger: local source of truth is `admin/finance/Inzterior-Finance.xlsx` (Overview, Income, Expenses sheets). Mirrored as a native Google Sheet — "Inzterior — Finance Ledger" — under inquiry.guidesbooks@gmail.com: https://docs.google.com/spreadsheets/d/1aV7m_0TQFyrsgWtyz2mM-gpdsQqDPKk-6sAiEb_4lxI/edit
 - Stray file to clean up: an earlier upload attempt (`Inzterior — Finance Ledger.xlsx`, plain xlsx, not a native Sheet) landed under inzterior.my@gmail.com's Drive by mistake — safe to delete from that account.
