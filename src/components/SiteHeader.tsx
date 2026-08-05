@@ -4,14 +4,9 @@ import Link from "next/link";
 import { useState } from "react";
 
 const NAV_LINKS = [
-  { href: "/", label: "Home" },
-  { href: "/services", label: "Services" },
-  { href: "/estimate", label: "Estimate" },
   { href: "/portfolio", label: "Portfolio" },
-  { href: "/team", label: "Our Team" },
-  { href: "/about", label: "About" },
-  { href: "/terms", label: "Our Terms" },
-  { href: "/contact", label: "Contact" },
+  { href: "/#journey", label: "How We Work" },
+  { href: "/estimate", label: "Estimate" },
 ];
 
 export default function SiteHeader() {
@@ -36,12 +31,11 @@ export default function SiteHeader() {
           ))}
         </nav>
 
-        <Link
-          href="/contact"
-          className="hidden border-b border-[var(--ink)] pb-0.5 text-sm transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)] sm:block"
-        >
-          Enquire
-        </Link>
+        <div className="hidden sm:block">
+          <Link href="/contact" className="btn btn-primary">
+            Start a Project
+          </Link>
+        </div>
 
         <button
           type="button"
@@ -65,6 +59,13 @@ export default function SiteHeader() {
               {link.label}
             </Link>
           ))}
+          <Link
+            href="/contact"
+            onClick={() => setOpen(false)}
+            className="btn btn-primary mt-2 w-fit"
+          >
+            Start a Project
+          </Link>
         </nav>
       )}
     </header>

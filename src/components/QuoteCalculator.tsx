@@ -12,7 +12,16 @@ import {
   type TierId,
 } from "@/lib/pricing";
 
+const PROPERTY_TYPES = [
+  { id: "landed", label: "Landed Terrace / Semi-D / Bungalow" },
+  { id: "condo", label: "Strata Condo / Serviced Residence" },
+  { id: "commercial-lot", label: "Commercial / Retail Lot" },
+] as const;
+
+type PropertyTypeId = (typeof PROPERTY_TYPES)[number]["id"];
+
 export default function QuoteCalculator() {
+  const [propertyType, setPropertyType] = useState<PropertyTypeId>("landed");
   const [projectType, setProjectType] = useState<ProjectTypeId>("residential");
   const [scope, setScope] = useState<ScopeId>("design-styling");
   const [tier, setTier] = useState<TierId>("mid");
@@ -37,11 +46,13 @@ export default function QuoteCalculator() {
       return;
     }
 
+    const propertyLabel = PROPERTY_TYPES.find((p) => p.id === propertyType)?.label ?? propertyType;
     const projectLabel = PROJECT_TYPES.find((p) => p.id === projectType)?.label ?? projectType;
     const scopeLabel = SCOPES.find((s) => s.id === scope)?.label ?? scope;
     const tierLabel = TIERS.find((t) => t.id === tier)?.label ?? tier;
 
     const details = [
+      `Property type: ${propertyLabel}`,
       `Project type: ${projectLabel}`,
       `Scope: ${scopeLabel}`,
       `Finish tier: ${tierLabel}`,
@@ -91,7 +102,33 @@ export default function QuoteCalculator() {
     <div className="grid gap-12 sm:grid-cols-[1.1fr_0.9fr]">
       <div className="flex flex-col gap-8">
         <div>
-          <span className="mb-2 block text-xs uppercase tracking-wide text-neutral-500">
+          <span className="mb-2 block text-xs tracking-wide text-[var(--ink-soft)] uppercase">
+            Property Type
+          </span>
+          <div className="flex flex-wrap gap-3">
+            {PROPERTY_TYPES.map((p) => (
+              <button
+                key={p.id}
+                type="button"
+                onClick={() => setPropertyType(p.id)}
+                className={`border px-4 py-2 text-sm ${
+                  propertyType === p.id
+                    ? "border-[var(--ink)] bg-[var(--ink)] text-[var(--bg)]"
+                    : "border-[var(--line)]"
+                }`}
+              >
+                {p.label}
+              </button>
+            ))}
+          </div>
+          <p className="mt-2 text-xs text-[var(--ink-soft)]">
+            For context only — this doesn&apos;t change the estimate below, but helps us prepare
+            for your project type ahead of a consultation.
+          </p>
+        </div>
+
+        <div>
+          <span className="mb-2 block text-xs tracking-wide text-[var(--ink-soft)] uppercase">
             Project Type
           </span>
           <div className="flex gap-3">
@@ -102,8 +139,8 @@ export default function QuoteCalculator() {
                 onClick={() => setProjectType(p.id)}
                 className={`border px-4 py-2 text-sm ${
                   projectType === p.id
-                    ? "border-neutral-900 bg-neutral-900 text-white"
-                    : "border-neutral-300"
+                    ? "border-[var(--ink)] bg-[var(--ink)] text-[var(--bg)]"
+                    : "border-[var(--line)]"
                 }`}
               >
                 {p.label}
@@ -113,7 +150,7 @@ export default function QuoteCalculator() {
         </div>
 
         <div>
-          <span className="mb-2 block text-xs uppercase tracking-wide text-neutral-500">
+          <span className="mb-2 block text-xs tracking-wide text-[var(--ink-soft)] uppercase">
             Scope
           </span>
           <div className="flex flex-col gap-2">
@@ -123,18 +160,18 @@ export default function QuoteCalculator() {
                 type="button"
                 onClick={() => setScope(s.id)}
                 className={`border px-4 py-3 text-left text-sm ${
-                  scope === s.id ? "border-neutral-900 bg-neutral-50" : "border-neutral-300"
+                  scope === s.id ? "border-[var(--ink)] bg-[var(--bg-panel)]" : "border-[var(--line)]"
                 }`}
               >
                 <span className="block font-medium">{s.label}</span>
-                <span className="mt-1 block text-xs text-neutral-500">{s.note}</span>
+                <span className="mt-1 block text-xs text-[var(--ink-soft)]">{s.note}</span>
               </button>
             ))}
           </div>
         </div>
 
         <div>
-          <span className="mb-2 block text-xs uppercase tracking-wide text-neutral-500">
+          <span className="mb-2 block text-xs tracking-wide text-[var(--ink-soft)] uppercase">
             Finish Tier
           </span>
           <div className="flex gap-3">
@@ -145,8 +182,8 @@ export default function QuoteCalculator() {
                 onClick={() => setTier(t.id)}
                 className={`border px-4 py-2 text-sm ${
                   tier === t.id
-                    ? "border-neutral-900 bg-neutral-900 text-white"
-                    : "border-neutral-300"
+                    ? "border-[var(--ink)] bg-[var(--ink)] text-[var(--bg)]"
+                    : "border-[var(--line)]"
                 }`}
               >
                 {t.label}
@@ -156,7 +193,10 @@ export default function QuoteCalculator() {
         </div>
 
         <div>
-          <label htmlFor="sqft" className="mb-2 block text-xs uppercase tracking-wide text-neutral-500">
+          <label
+            htmlFor="sqft"
+            className="mb-2 block text-xs tracking-wide text-[var(--ink-soft)] uppercase"
+          >
             Size (square feet)
           </label>
           <input
@@ -166,21 +206,21 @@ export default function QuoteCalculator() {
             step={50}
             value={sqft}
             onChange={(e) => setSqft(Number(e.target.value) || 0)}
-            className="w-full max-w-xs border border-neutral-300 px-3 py-2.5 text-sm"
+            className="w-full max-w-xs border border-[var(--line)] px-3 py-2.5 text-sm"
           />
         </div>
       </div>
 
       <div className="flex flex-col gap-6">
-        <div className="border border-neutral-200 bg-neutral-50 p-8">
-          <span className="mb-2 block text-xs uppercase tracking-wide text-neutral-500">
+        <div className="border border-[var(--line)] bg-[var(--bg-panel)] p-8">
+          <span className="mb-2 block text-xs tracking-wide text-[var(--ink-soft)] uppercase">
             Estimated Range
           </span>
           <p className="text-3xl font-semibold">
             {formatMYR(estimate.low)} – {formatMYR(estimate.high)}
           </p>
-          {scopeNote && <p className="mt-3 text-sm text-neutral-600">{scopeNote}</p>}
-          <p className="mt-4 text-xs text-neutral-500">
+          {scopeNote && <p className="mt-3 text-sm text-[var(--ink-soft)]">{scopeNote}</p>}
+          <p className="mt-4 text-xs text-[var(--ink-soft)]">
             This is a preliminary estimate, not a fixed quote. Your exact price will be
             documented in a written contract after a free discovery consultation — see{" "}
             <a href="/about" className="underline">
@@ -193,7 +233,7 @@ export default function QuoteCalculator() {
         <form onSubmit={handleEmailEstimate} className="flex flex-col gap-4">
           <p className="text-sm font-medium">Get this estimate emailed to you</p>
           <div>
-            <label htmlFor="lead-name" className="mb-1 block text-xs uppercase tracking-wide">
+            <label htmlFor="lead-name" className="mb-1 block text-xs tracking-wide uppercase">
               Name
             </label>
             <input
@@ -201,11 +241,11 @@ export default function QuoteCalculator() {
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="w-full border border-neutral-300 px-3 py-2.5 text-sm"
+              className="w-full border border-[var(--line)] px-3 py-2.5 text-sm"
             />
           </div>
           <div>
-            <label htmlFor="lead-email" className="mb-1 block text-xs uppercase tracking-wide">
+            <label htmlFor="lead-email" className="mb-1 block text-xs tracking-wide uppercase">
               Email
             </label>
             <input
@@ -213,13 +253,13 @@ export default function QuoteCalculator() {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full border border-neutral-300 px-3 py-2.5 text-sm"
+              className="w-full border border-[var(--line)] px-3 py-2.5 text-sm"
             />
           </div>
           <button
             type="submit"
             disabled={submitting}
-            className="w-fit rounded bg-neutral-900 px-6 py-3 text-xs uppercase tracking-wide text-white disabled:opacity-50"
+            className="w-fit rounded bg-[var(--ink)] px-6 py-3 text-xs tracking-wide text-[var(--bg)] uppercase disabled:opacity-50"
           >
             {submitting ? "Sending..." : "Email Me This Estimate"}
           </button>
