@@ -8,7 +8,7 @@ import SiteFooter from "@/components/SiteFooter";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
-  weight: ["500", "600"],
+  axes: ["opsz", "SOFT", "WONK"],
   style: ["normal", "italic"],
   variable: "--font-serif",
 });

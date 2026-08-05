@@ -23,6 +23,7 @@ h2,
 h3,
 .font-serif-display {
   font-family: var(--font-serif), ui-serif, Georgia, serif;
+  font-variation-settings: "WONK" 0;
 }
 
 .btn {
