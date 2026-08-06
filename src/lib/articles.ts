@@ -27,6 +27,7 @@ export const ARTICLE_SLUGS: string[] = [
   "spot-deposit-disappear-contractor-malaysia",
   "interior-design-cost-johor-bahru-iskandar-puteri",
   "interior-design-contract-guide-malaysia",
+  "condo-vs-landed-renovation-iskandar-puteri",
 ];
 
 export async function getArticleModule(slug: string): Promise<ArticleModule> {
