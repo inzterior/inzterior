@@ -2,25 +2,26 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import type { Dictionary } from "@/lib/i18n";
 
-const GALLERY = [
-  { label: "Residential — Living Room", from: "from-amber-200", to: "to-emerald-700" },
-  { label: "Residential — Kitchen", from: "from-stone-300", to: "to-stone-700" },
-  { label: "Commercial — Office", from: "from-amber-100", to: "to-orange-700" },
-  { label: "Residential — Bedroom", from: "from-emerald-600", to: "to-neutral-900" },
-  { label: "Commercial — F&B", from: "from-orange-700", to: "to-amber-100" },
-  { label: "Residential — Full Home", from: "from-stone-600", to: "to-amber-200" },
+const GALLERY_STYLES = [
+  { from: "from-amber-200", to: "to-emerald-700" },
+  { from: "from-stone-300", to: "to-stone-700" },
+  { from: "from-amber-100", to: "to-orange-700" },
+  { from: "from-emerald-600", to: "to-neutral-900" },
+  { from: "from-orange-700", to: "to-amber-100" },
+  { from: "from-stone-600", to: "to-amber-200" },
 ];
 
-const TABS = [
-  { id: "concept", label: "Concept & Aesthetic Direction" },
-  { id: "active", label: "Active Projects" },
-] as const;
+type TabId = "concept" | "active";
 
-type TabId = (typeof TABS)[number]["id"];
-
-export default function PortfolioGallery() {
+export default function PortfolioGallery({ dict }: { dict: Dictionary["portfolioGallery"] }) {
   const [tab, setTab] = useState<TabId>("concept");
+
+  const TABS: { id: TabId; label: string }[] = [
+    { id: "concept", label: dict.tabConcept },
+    { id: "active", label: dict.tabActive },
+  ];
 
   return (
     <section className="py-20">
@@ -45,42 +46,40 @@ export default function PortfolioGallery() {
         {tab === "concept" ? (
           <>
             <div className="grid gap-6 sm:grid-cols-3">
-              {GALLERY.map((item) => (
-                <div
-                  key={item.label}
-                  className={`relative flex aspect-square items-end bg-gradient-to-br ${item.from} ${item.to} p-4`}
-                >
-                  <span className="absolute top-4 left-4 rounded-full bg-black/30 px-2.5 py-1 text-[10px] font-semibold tracking-wide text-white uppercase">
-                    Concept Study
-                  </span>
-                  <span className="text-xs tracking-wide text-white">{item.label}</span>
-                </div>
-              ))}
+              {dict.galleryItems.map((label, i) => {
+                const style = GALLERY_STYLES[i];
+                return (
+                  <div
+                    key={label}
+                    className={`relative flex aspect-square items-end bg-gradient-to-br ${style.from} ${style.to} p-4`}
+                  >
+                    <span className="absolute top-4 left-4 rounded-full bg-black/30 px-2.5 py-1 text-[10px] font-semibold tracking-wide text-white uppercase">
+                      {dict.conceptBadge}
+                    </span>
+                    <span className="text-xs tracking-wide text-white">{label}</span>
+                  </div>
+                );
+              })}
             </div>
 
             <div className="mt-12 border border-dashed border-[var(--line)] p-8 text-center">
-              <h3 className="mb-2 text-lg font-semibold">Want to see recent work directly?</h3>
+              <h3 className="mb-2 text-lg font-semibold">{dict.conceptHeading}</h3>
               <p className="mx-auto mb-6 max-w-md text-sm text-[var(--ink-soft)]">
-                Get in touch and we&apos;ll walk you through examples of work like this in
-                person.
+                {dict.conceptBody}
               </p>
               <Link href="/contact" className="btn btn-outline">
-                Get in Touch
+                {dict.conceptButton}
               </Link>
             </div>
           </>
         ) : (
           <div className="border border-dashed border-[var(--line)] p-12 text-center">
-            <h3 className="mb-2 text-lg font-semibold">
-              Active project documentation is on the way
-            </h3>
+            <h3 className="mb-2 text-lg font-semibold">{dict.activeHeading}</h3>
             <p className="mx-auto mb-6 max-w-md text-sm text-[var(--ink-soft)]">
-              We&apos;re photographing and documenting current Iskandar Puteri projects as they
-              complete — floor plans, on-site progress, and finished spaces will appear here
-              directly, not stock imagery.
+              {dict.activeBody}
             </p>
             <Link href="/contact" className="btn btn-outline">
-              Ask About a Project in Progress
+              {dict.activeButton}
             </Link>
           </div>
         )}

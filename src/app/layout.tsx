@@ -5,6 +5,8 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import LanguagePopup from "@/components/LanguagePopup";
+import { getLocale, getDictionary, hasLocaleCookie } from "@/lib/i18n";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -27,17 +29,22 @@ export const metadata: Metadata = {
     "Inzterior is a Malaysian interior design studio crafting thoughtful residential and commercial spaces, based in Horizon Hills, Iskandar Puteri.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
+  const dict = getDictionary(locale);
+  const showLanguagePopup = !(await hasLocaleCookie());
+
   return (
-    <html lang="en" className={`h-full antialiased ${fraunces.variable} ${workSans.variable}`}>
+    <html lang={locale} className={`h-full antialiased ${fraunces.variable} ${workSans.variable}`}>
       <body className="flex min-h-full flex-col">
-        <SiteHeader />
+        <SiteHeader dict={dict.nav} locale={locale} languageSwitcherAriaLabel={dict.languageSwitcher.ariaLabel} />
         <main className="flex-1">{children}</main>
-        <SiteFooter />
+        <SiteFooter dict={dict.footer} />
+        {showLanguagePopup && <LanguagePopup dict={dict.languagePopup} />}
         <Analytics />
         <SpeedInsights />
       </body>

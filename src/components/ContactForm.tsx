@@ -1,8 +1,9 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import type { Dictionary } from "@/lib/i18n";
 
-export default function ContactForm() {
+export default function ContactForm({ dict }: { dict: Dictionary["contactForm"] }) {
   const [status, setStatus] = useState<{ message: string; ok: boolean } | null>(null);
   const [submitting, setSubmitting] = useState(false);
 
@@ -17,7 +18,7 @@ export default function ContactForm() {
     const message = (data.get("message") as string)?.trim() ?? "";
 
     if (!name || !email || !message) {
-      setStatus({ message: "Please fill in your name, email, and project details.", ok: false });
+      setStatus({ message: dict.errorRequired, ok: false });
       return;
     }
 
@@ -43,13 +44,10 @@ export default function ContactForm() {
       }
 
       form.reset();
-      setStatus({ message: "Thanks — we've got your enquiry and will be in touch soon.", ok: true });
+      setStatus({ message: dict.success, ok: true });
     } catch (err) {
       setStatus({
-        message:
-          err instanceof Error
-            ? err.message
-            : "Something went wrong. Please email inquiry@inzterior.com directly.",
+        message: err instanceof Error ? err.message : dict.errorGeneric,
         ok: false,
       });
     } finally {
@@ -62,7 +60,7 @@ export default function ContactForm() {
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="name" className="mb-1 block text-xs uppercase tracking-wide">
-            Name
+            {dict.nameLabel}
           </label>
           <input
             id="name"
@@ -74,7 +72,7 @@ export default function ContactForm() {
         </div>
         <div>
           <label htmlFor="email" className="mb-1 block text-xs uppercase tracking-wide">
-            Email
+            {dict.emailLabel}
           </label>
           <input
             id="email"
@@ -89,7 +87,7 @@ export default function ContactForm() {
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="phone" className="mb-1 block text-xs uppercase tracking-wide">
-            Phone (optional)
+            {dict.phoneLabel}
           </label>
           <input
             id="phone"
@@ -100,33 +98,33 @@ export default function ContactForm() {
         </div>
         <div>
           <label htmlFor="project-type" className="mb-1 block text-xs uppercase tracking-wide">
-            Project Type
+            {dict.projectTypeLabel}
           </label>
           <select
             id="project-type"
             name="project-type"
             className="w-full border border-neutral-300 px-3 py-2.5 text-sm"
           >
-            <option value="">Select one</option>
-            <option value="Residential — Full Home">Residential — Full Home</option>
-            <option value="Residential — Single Room">Residential — Single Room</option>
-            <option value="Commercial / Office">Commercial / Office</option>
-            <option value="Renovation">Renovation</option>
-            <option value="Consultation Only">Consultation Only</option>
+            <option value="">{dict.selectOne}</option>
+            <option value="Residential — Full Home">{dict.options.residentialFull}</option>
+            <option value="Residential — Single Room">{dict.options.residentialSingle}</option>
+            <option value="Commercial / Office">{dict.options.commercialOffice}</option>
+            <option value="Renovation">{dict.options.renovation}</option>
+            <option value="Consultation Only">{dict.options.consultationOnly}</option>
           </select>
         </div>
       </div>
 
       <div>
         <label htmlFor="message" className="mb-1 block text-xs uppercase tracking-wide">
-          Tell us about your space
+          {dict.messageLabel}
         </label>
         <textarea
           id="message"
           name="message"
           required
           rows={5}
-          placeholder="Location, size, budget range, timeline, and what you're hoping to achieve..."
+          placeholder={dict.messagePlaceholder}
           className="w-full border border-neutral-300 px-3 py-2.5 text-sm"
         />
       </div>
@@ -136,7 +134,7 @@ export default function ContactForm() {
         disabled={submitting}
         className="w-fit rounded bg-neutral-900 px-6 py-3 text-xs uppercase tracking-wide text-white disabled:opacity-50"
       >
-        {submitting ? "Sending..." : "Send Enquiry"}
+        {submitting ? dict.submitting : dict.submit}
       </button>
 
       {status && (

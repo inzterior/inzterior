@@ -11,16 +11,17 @@ import {
   type ScopeId,
   type TierId,
 } from "@/lib/pricing";
+import type { Dictionary } from "@/lib/i18n";
 
 const PROPERTY_TYPES = [
-  { id: "landed", label: "Landed Terrace / Semi-D / Bungalow" },
-  { id: "condo", label: "Strata Condo / Serviced Residence" },
-  { id: "commercial-lot", label: "Commercial / Retail Lot" },
+  { id: "landed" },
+  { id: "condo" },
+  { id: "commercial-lot" },
 ] as const;
 
 type PropertyTypeId = (typeof PROPERTY_TYPES)[number]["id"];
 
-export default function QuoteCalculator() {
+export default function QuoteCalculator({ dict }: { dict: Dictionary["quoteCalculator"] }) {
   const [propertyType, setPropertyType] = useState<PropertyTypeId>("landed");
   const [projectType, setProjectType] = useState<ProjectTypeId>("residential");
   const [scope, setScope] = useState<ScopeId>("design-styling");
@@ -37,19 +38,19 @@ export default function QuoteCalculator() {
     [projectType, scope, tier, sqft]
   );
 
-  const scopeNote = SCOPES.find((s) => s.id === scope)?.note;
+  const scopeInfo = dict.scopes[scope];
 
   async function handleEmailEstimate(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (!name.trim() || !email.trim()) {
-      setLeadStatus({ message: "Please fill in your name and email.", ok: false });
+      setLeadStatus({ message: dict.errorRequired, ok: false });
       return;
     }
 
-    const propertyLabel = PROPERTY_TYPES.find((p) => p.id === propertyType)?.label ?? propertyType;
-    const projectLabel = PROJECT_TYPES.find((p) => p.id === projectType)?.label ?? projectType;
-    const scopeLabel = SCOPES.find((s) => s.id === scope)?.label ?? scope;
-    const tierLabel = TIERS.find((t) => t.id === tier)?.label ?? tier;
+    const propertyLabel = dict.propertyTypes[propertyType];
+    const projectLabel = dict.projectTypes[projectType];
+    const scopeLabel = dict.scopes[scope].label;
+    const tierLabel = dict.tiers[tier];
 
     const details = [
       `Property type: ${propertyLabel}`,
@@ -81,16 +82,10 @@ export default function QuoteCalculator() {
         throw new Error(body?.error || "Something went wrong.");
       }
 
-      setLeadStatus({
-        message: "Thanks — we've got your estimate request and will follow up soon.",
-        ok: true,
-      });
+      setLeadStatus({ message: dict.success, ok: true });
     } catch (err) {
       setLeadStatus({
-        message:
-          err instanceof Error
-            ? err.message
-            : "Something went wrong. Please email inquiry@inzterior.com directly.",
+        message: err instanceof Error ? err.message : dict.errorGeneric,
         ok: false,
       });
     } finally {
@@ -103,7 +98,7 @@ export default function QuoteCalculator() {
       <div className="flex flex-col gap-8">
         <div>
           <span className="mb-2 block text-xs tracking-wide text-[var(--ink-soft)] uppercase">
-            Property Type
+            {dict.propertyTypeLabel}
           </span>
           <div className="flex flex-wrap gap-3">
             {PROPERTY_TYPES.map((p) => (
@@ -117,19 +112,16 @@ export default function QuoteCalculator() {
                     : "border-[var(--line)]"
                 }`}
               >
-                {p.label}
+                {dict.propertyTypes[p.id]}
               </button>
             ))}
           </div>
-          <p className="mt-2 text-xs text-[var(--ink-soft)]">
-            For context only — this doesn&apos;t change the estimate below, but helps us prepare
-            for your project type ahead of a consultation.
-          </p>
+          <p className="mt-2 text-xs text-[var(--ink-soft)]">{dict.propertyNote}</p>
         </div>
 
         <div>
           <span className="mb-2 block text-xs tracking-wide text-[var(--ink-soft)] uppercase">
-            Project Type
+            {dict.projectTypeLabel}
           </span>
           <div className="flex gap-3">
             {PROJECT_TYPES.map((p) => (
@@ -143,7 +135,7 @@ export default function QuoteCalculator() {
                     : "border-[var(--line)]"
                 }`}
               >
-                {p.label}
+                {dict.projectTypes[p.id]}
               </button>
             ))}
           </div>
@@ -151,7 +143,7 @@ export default function QuoteCalculator() {
 
         <div>
           <span className="mb-2 block text-xs tracking-wide text-[var(--ink-soft)] uppercase">
-            Scope
+            {dict.scopeLabel}
           </span>
           <div className="flex flex-col gap-2">
             {SCOPES.map((s) => (
@@ -163,8 +155,10 @@ export default function QuoteCalculator() {
                   scope === s.id ? "border-[var(--ink)] bg-[var(--bg-panel)]" : "border-[var(--line)]"
                 }`}
               >
-                <span className="block font-medium">{s.label}</span>
-                <span className="mt-1 block text-xs text-[var(--ink-soft)]">{s.note}</span>
+                <span className="block font-medium">{dict.scopes[s.id].label}</span>
+                <span className="mt-1 block text-xs text-[var(--ink-soft)]">
+                  {dict.scopes[s.id].note}
+                </span>
               </button>
             ))}
           </div>
@@ -172,7 +166,7 @@ export default function QuoteCalculator() {
 
         <div>
           <span className="mb-2 block text-xs tracking-wide text-[var(--ink-soft)] uppercase">
-            Finish Tier
+            {dict.tierLabel}
           </span>
           <div className="flex gap-3">
             {TIERS.map((t) => (
@@ -186,7 +180,7 @@ export default function QuoteCalculator() {
                     : "border-[var(--line)]"
                 }`}
               >
-                {t.label}
+                {dict.tiers[t.id]}
               </button>
             ))}
           </div>
@@ -197,7 +191,7 @@ export default function QuoteCalculator() {
             htmlFor="sqft"
             className="mb-2 block text-xs tracking-wide text-[var(--ink-soft)] uppercase"
           >
-            Size (square feet)
+            {dict.sizeLabel}
           </label>
           <input
             id="sqft"
@@ -214,27 +208,26 @@ export default function QuoteCalculator() {
       <div className="flex flex-col gap-6">
         <div className="border border-[var(--line)] bg-[var(--bg-panel)] p-8">
           <span className="mb-2 block text-xs tracking-wide text-[var(--ink-soft)] uppercase">
-            Estimated Range
+            {dict.estimatedRangeLabel}
           </span>
           <p className="text-3xl font-semibold">
             {formatMYR(estimate.low)} – {formatMYR(estimate.high)}
           </p>
-          {scopeNote && <p className="mt-3 text-sm text-[var(--ink-soft)]">{scopeNote}</p>}
+          {scopeInfo?.note && <p className="mt-3 text-sm text-[var(--ink-soft)]">{scopeInfo.note}</p>}
           <p className="mt-4 text-xs text-[var(--ink-soft)]">
-            This is a preliminary estimate, not a fixed quote. Your exact price will be
-            documented in a written contract after a free discovery consultation — see{" "}
+            {dict.disclaimerPart1}
             <a href="/about" className="underline">
-              how we protect every client
+              {dict.disclaimerLinkText}
             </a>
-            .
+            {dict.disclaimerPart2}
           </p>
         </div>
 
         <form onSubmit={handleEmailEstimate} className="flex flex-col gap-4">
-          <p className="text-sm font-medium">Get this estimate emailed to you</p>
+          <p className="text-sm font-medium">{dict.emailEstimateHeading}</p>
           <div>
             <label htmlFor="lead-name" className="mb-1 block text-xs tracking-wide uppercase">
-              Name
+              {dict.nameLabel}
             </label>
             <input
               id="lead-name"
@@ -246,7 +239,7 @@ export default function QuoteCalculator() {
           </div>
           <div>
             <label htmlFor="lead-email" className="mb-1 block text-xs tracking-wide uppercase">
-              Email
+              {dict.emailLabel}
             </label>
             <input
               id="lead-email"
@@ -261,7 +254,7 @@ export default function QuoteCalculator() {
             disabled={submitting}
             className="w-fit rounded bg-[var(--ink)] px-6 py-3 text-xs tracking-wide text-[var(--bg)] uppercase disabled:opacity-50"
           >
-            {submitting ? "Sending..." : "Email Me This Estimate"}
+            {submitting ? dict.submitting : dict.submit}
           </button>
           {leadStatus && (
             <p className={`text-sm ${leadStatus.ok ? "text-emerald-700" : "text-red-700"}`}>

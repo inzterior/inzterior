@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import PortfolioGallery from "@/components/PortfolioGallery";
+import { getLocale, getDictionary } from "@/lib/i18n";
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -7,26 +8,24 @@ export const metadata: Metadata = {
     "Concept studies and active project direction from Inzterior — residential and commercial interior design across Iskandar Puteri, Johor.",
 };
 
-export default function PortfolioPage() {
+export default async function PortfolioPage() {
+  const locale = await getLocale();
+  const dict = getDictionary(locale);
+  const t = dict.portfolio;
+
   return (
     <>
       <section className="border-b border-[var(--line)] py-20">
         <div className="mx-auto max-w-5xl px-6">
           <span className="mb-4 block text-sm font-semibold text-[var(--accent)]">
-            Design Direction
+            {t.eyebrow}
           </span>
-          <h1 className="max-w-2xl text-3xl font-semibold sm:text-4xl">
-            The concept work behind every Inzterior project.
-          </h1>
-          <p className="mt-4 max-w-xl text-[var(--ink-soft)]">
-            These are concept studies — the aesthetic direction and spatial thinking that shape
-            how we approach a space, published while our first completed Iskandar Puteri
-            projects are still underway. Full project documentation is on its way.
-          </p>
+          <h1 className="max-w-2xl text-3xl font-semibold sm:text-4xl">{t.heading}</h1>
+          <p className="mt-4 max-w-xl text-[var(--ink-soft)]">{t.lead}</p>
         </div>
       </section>
 
-      <PortfolioGallery />
+      <PortfolioGallery dict={dict.portfolioGallery} />
     </>
   );
 }
