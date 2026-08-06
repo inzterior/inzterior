@@ -303,6 +303,13 @@ export const zh: Dictionary = {
         role: "创办人兼首席设计师",
         bio: "Billy 创立 Inzterior，正是为了解决他在马来西亚翻新行业中屡见不鲜的信任问题——收了订金就消失的承包商、含糊不清的工程范围，以及从未正式注册的设计师。他主导每个项目的设计方向，并从概念到交付全程担任客户的单一对接窗口。",
       },
+      {
+        initials: "JY",
+        name: "Jackie Yap",
+        role: "联合创始人",
+        // Placeholder — Billy and Jackie will supply the real bio copy later.
+        bio: "Jackie 与 Billy 共同创立 Inzterior，秉持同样的理念，致力于在整个依斯干达公主城和新山地区提供透明、记录完整的翻新项目。",
+      },
     ],
     craftEyebrow: "我们的工作方式",
     craftHeading: "小而精的团队，清晰的流程",

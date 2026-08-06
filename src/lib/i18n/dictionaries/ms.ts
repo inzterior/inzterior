@@ -314,6 +314,13 @@ export const ms: Dictionary = {
         role: "Pengasas & Pereka Bentuk Utama",
         bio: "Billy menubuhkan Inzterior untuk menangani masalah kepercayaan yang beliau lihat berulang kali dalam industri ubah suai Malaysia — kontraktor yang mengambil deposit lalu hilang, skop kabur, dan pereka bentuk yang tidak pernah berdaftar dengan sah. Beliau menerajui hala tuju reka bentuk setiap projek dan kekal sebagai titik hubungan tunggal pelanggan dari konsep hingga penyerahan.",
       },
+      {
+        initials: "JY",
+        name: "Jackie Yap",
+        role: "Pengasas Bersama",
+        // Placeholder — Billy and Jackie will supply the real bio copy later.
+        bio: "Jackie mengasaskan Inzterior bersama Billy, membawa komitmen yang sama terhadap projek ubah suai yang telus dan didokumentasikan dengan baik di seluruh Iskandar Puteri dan Johor Bahru.",
+      },
     ],
     craftEyebrow: "Cara Kami Bekerja",
     craftHeading: "Pasukan kecil, proses yang jelas",

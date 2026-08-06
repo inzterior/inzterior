@@ -335,6 +335,13 @@ export const en = {
         role: "Founder & Principal Designer",
         bio: "Billy started Inzterior to fix the trust problem he kept seeing in Malaysia's renovation industry — deposit-and-disappear contractors, vague scopes, and designers who were never properly registered. He leads every project's design direction and stays as the client's single point of contact from concept to handover.",
       },
+      {
+        initials: "JY",
+        name: "Jackie Yap",
+        role: "Co-founder",
+        // Placeholder — Billy and Jackie will supply the real bio copy later.
+        bio: "Jackie co-founded Inzterior alongside Billy, bringing the same commitment to transparent, well-documented renovation projects across Iskandar Puteri and Johor Bahru.",
+      },
     ],
     craftEyebrow: "How We Work",
     craftHeading: "A small team, a clear process",
