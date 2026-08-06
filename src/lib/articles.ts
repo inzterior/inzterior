@@ -30,6 +30,7 @@ export const ARTICLE_SLUGS: string[] = [
   "condo-vs-landed-renovation-iskandar-puteri",
   "renovation-timeline-malaysia",
   "renovation-warranty-malaysia-guide",
+  "interior-designer-vs-contractor-malaysia",
 ];
 
 export async function getArticleModule(slug: string): Promise<ArticleModule> {
