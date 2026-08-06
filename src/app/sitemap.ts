@@ -1,7 +1,5 @@
 import type { MetadataRoute } from "next";
-import { getAllArticles } from "@/lib/articles";
-
-const BASE_URL = "https://inzterior.com";
+import { BASE_URL, getAllArticles } from "@/lib/articles";
 
 const STATIC_ROUTES = [
   "",
@@ -23,7 +21,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return [
     ...STATIC_ROUTES.map((route) => ({
       url: `${BASE_URL}${route}`,
-      lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: route === "" ? 1 : 0.7,
     })),

@@ -1,5 +1,8 @@
 import type { ComponentType } from "react";
 import type { AuthorId } from "./authors";
+import { AUTHORS } from "./authors";
+
+export const BASE_URL = "https://inzterior.com";
 
 export type ArticleMeta = {
   title: string;
@@ -34,13 +37,39 @@ export const ARTICLE_SLUGS: string[] = [
 ];
 
 export async function getArticleModule(slug: string): Promise<ArticleModule> {
-  // turbopackOptional: the @/content/articles glob currently matches no
-  // .mdx files (ARTICLE_SLUGS is empty), which would otherwise fail the
-  // Turbopack build. This suppresses the build-time resolve error; the
-  // import still throws at runtime if ever called with a missing slug.
-  return (await import(
+  // turbopackOptional: Turbopack must statically resolve the
+  // @/content/articles directory to build its glob for this dynamic
+  // import, regardless of how many .mdx files currently live there. This
+  // suppresses the build-time resolve error permanently, not just while
+  // the directory is empty; the import still throws at runtime if ever
+  // called with a missing slug.
+  const mod = (await import(
     /* turbopackOptional: true */ `@/content/articles/${slug}.mdx`
   )) as ArticleModule;
+
+  const { meta } = mod;
+  if (!meta || typeof meta.title !== "string" || !meta.title) {
+    throw new Error(`Article "${slug}": meta.title is missing or invalid`);
+  }
+  if (!(meta.author in AUTHORS)) {
+    throw new Error(`Article "${slug}": meta.author "${meta.author}" is not a known author`);
+  }
+  if (Number.isNaN(new Date(meta.publishedAt).getTime())) {
+    throw new Error(`Article "${slug}": meta.publishedAt "${meta.publishedAt}" is not a valid date`);
+  }
+  if (Number.isNaN(new Date(meta.updatedAt).getTime())) {
+    throw new Error(`Article "${slug}": meta.updatedAt "${meta.updatedAt}" is not a valid date`);
+  }
+
+  return mod;
+}
+
+export function formatDate(iso: string): string {
+  return new Date(iso).toLocaleDateString("en-MY", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
 }
 
 export async function getAllArticles(): Promise<Array<{ slug: string; meta: ArticleMeta }>> {

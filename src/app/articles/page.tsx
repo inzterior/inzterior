@@ -1,22 +1,23 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { getAllArticles } from "@/lib/articles";
+import { BASE_URL, formatDate, getAllArticles } from "@/lib/articles";
 import { AUTHORS } from "@/lib/authors";
 
-export const metadata: Metadata = {
-  title: "Articles",
-  description:
-    "Practical guides on renovation costs, contracts, and timelines in Iskandar Puteri and Johor Bahru, from the Inzterior team.",
-};
+const TITLE = "Articles";
+const DESCRIPTION =
+  "Practical guides on renovation costs, contracts, and timelines in Iskandar Puteri and Johor Bahru, from the Inzterior team.";
 
-function formatDate(iso: string) {
-  return new Date(iso).toLocaleDateString("en-MY", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-}
+export const metadata: Metadata = {
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: `${BASE_URL}/articles` },
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    type: "website",
+  },
+};
 
 export default async function ArticlesPage() {
   const articles = await getAllArticles();

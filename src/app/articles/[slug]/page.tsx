@@ -2,23 +2,13 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { ARTICLE_SLUGS, getArticleModule } from "@/lib/articles";
+import { ARTICLE_SLUGS, BASE_URL, formatDate, getArticleModule } from "@/lib/articles";
 import { AUTHORS } from "@/lib/authors";
 
 export const dynamicParams = false;
 
-const BASE_URL = "https://inzterior.com";
-
 export function generateStaticParams() {
   return ARTICLE_SLUGS.map((slug) => ({ slug }));
-}
-
-function formatDate(iso: string) {
-  return new Date(iso).toLocaleDateString("en-MY", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
 }
 
 export async function generateMetadata({
@@ -76,7 +66,7 @@ export default async function ArticlePage({
 
   return (
     <article>
-      {/* eslint-disable-next-line react/no-danger -- JSON-LD is our own generated data, not user input */}
+      {/* JSON-LD is our own generated data, not user input */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
