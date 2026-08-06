@@ -23,7 +23,7 @@ export type ArticleModule = {
 };
 
 // Appended to as each article ships — see Tasks 6, 8-13.
-export const ARTICLE_SLUGS: string[] = [];
+export const ARTICLE_SLUGS: string[] = ["spot-deposit-disappear-contractor-malaysia"];
 
 export async function getArticleModule(slug: string): Promise<ArticleModule> {
   // turbopackOptional: the @/content/articles glob currently matches no
