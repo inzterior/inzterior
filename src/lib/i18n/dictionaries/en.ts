@@ -24,6 +24,7 @@ type ProcessStage = {
 export const en = {
   nav: {
     portfolio: "Portfolio",
+    articles: "Articles",
     howWeWork: "How We Work",
     estimate: "Estimate",
     startProject: "Start a Project",

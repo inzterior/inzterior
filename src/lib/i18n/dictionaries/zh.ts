@@ -3,6 +3,7 @@ import type { Dictionary } from "../index";
 export const zh: Dictionary = {
   nav: {
     portfolio: "作品集",
+    articles: "文章",
     howWeWork: "我们如何运作",
     estimate: "报价预估",
     startProject: "开始项目",

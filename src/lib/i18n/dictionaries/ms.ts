@@ -3,6 +3,7 @@ import type { Dictionary } from "../index";
 export const ms: Dictionary = {
   nav: {
     portfolio: "Portfolio",
+    articles: "Artikel",
     howWeWork: "Cara Kami Bekerja",
     estimate: "Anggaran",
     startProject: "Mulakan Projek",
