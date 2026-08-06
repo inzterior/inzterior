@@ -26,7 +26,13 @@ export type ArticleModule = {
 export const ARTICLE_SLUGS: string[] = [];
 
 export async function getArticleModule(slug: string): Promise<ArticleModule> {
-  return (await import(`@/content/articles/${slug}.mdx`)) as ArticleModule;
+  // turbopackOptional: the @/content/articles glob currently matches no
+  // .mdx files (ARTICLE_SLUGS is empty), which would otherwise fail the
+  // Turbopack build. This suppresses the build-time resolve error; the
+  // import still throws at runtime if ever called with a missing slug.
+  return (await import(
+    /* turbopackOptional: true */ `@/content/articles/${slug}.mdx`
+  )) as ArticleModule;
 }
 
 export async function getAllArticles(): Promise<Array<{ slug: string; meta: ArticleMeta }>> {
