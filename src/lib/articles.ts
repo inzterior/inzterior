@@ -28,6 +28,7 @@ export const ARTICLE_SLUGS: string[] = [
   "interior-design-cost-johor-bahru-iskandar-puteri",
   "interior-design-contract-guide-malaysia",
   "condo-vs-landed-renovation-iskandar-puteri",
+  "renovation-timeline-malaysia",
 ];
 
 export async function getArticleModule(slug: string): Promise<ArticleModule> {
