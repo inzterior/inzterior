@@ -37,12 +37,12 @@ export const ARTICLE_SLUGS: string[] = [
 ];
 
 export async function getArticleModule(slug: string): Promise<ArticleModule> {
-  // turbopackOptional: Turbopack must statically resolve the
-  // @/content/articles directory to build its glob for this dynamic
-  // import, regardless of how many .mdx files currently live there. This
-  // suppresses the build-time resolve error permanently, not just while
-  // the directory is empty; the import still throws at runtime if ever
-  // called with a missing slug.
+  // turbopackOptional: keeps the build green if src/content/articles ever
+  // ends up empty or missing (e.g. a fresh checkout mid-migration, or all
+  // slugs removed from ARTICLE_SLUGS) — Turbopack otherwise fails to
+  // resolve this glob-based dynamic import when zero .mdx files match.
+  // The import still throws MODULE_NOT_FOUND at runtime if ever called
+  // with a slug that has no matching file.
   const mod = (await import(
     /* turbopackOptional: true */ `@/content/articles/${slug}.mdx`
   )) as ArticleModule;
