@@ -18,6 +18,7 @@ export default function SiteHeader({
 
   const NAV_LINKS = [
     { href: "/portfolio", label: dict.portfolio },
+    { href: "/articles", label: "Articles" },
     { href: "/#journey", label: dict.howWeWork },
     { href: "/estimate", label: dict.estimate },
   ];
