@@ -25,6 +25,10 @@ export const ms: Dictionary = {
     copyright: "© 2026 Inzterior. Hak cipta terpelihara.",
     tradingName:
       "Inzterior ialah nama dagangan Istory Design Studio (No. Pendaftaran SSM SA0647003-M).",
+    follow: "Ikuti",
+    facebook: "Facebook",
+    instagram: "Instagram",
+    tiktok: "TikTok",
   },
   languagePopup: {
     heading: "Pilih bahasa anda",

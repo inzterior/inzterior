@@ -23,6 +23,10 @@ export const zh: Dictionary = {
     location: "Horizon Hills, Iskandar Puteri, Johor",
     copyright: "© 2026 Inzterior. 保留所有权利。",
     tradingName: "Inzterior 是 Istory Design Studio 的商用名称（SSM注册号 SA0647003-M）。",
+    follow: "关注我们",
+    facebook: "Facebook",
+    instagram: "Instagram",
+    tiktok: "TikTok",
   },
   languagePopup: {
     heading: "选择您的语言",

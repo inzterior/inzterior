@@ -34,6 +34,12 @@ export const ARTICLE_SLUGS: string[] = [
   "renovation-timeline-malaysia",
   "renovation-warranty-malaysia-guide",
   "interior-designer-vs-contractor-malaysia",
+  "choose-interior-design-studio-johor-bahru-checklist",
+  "interior-design-consultation-johor-bahru",
+  "small-space-interior-design-johor-bahru-condos",
+  "living-room-design-ideas-johor-bahru-terrace-link-houses",
+  "3d-visualization-interior-design-what-it-shows-you",
+  "johor-climate-renovation-humidity-heat-materials",
 ];
 
 export async function getArticleModule(slug: string): Promise<ArticleModule> {

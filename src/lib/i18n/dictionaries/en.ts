@@ -46,6 +46,10 @@ export const en = {
     copyright: "© 2026 Inzterior. All rights reserved.",
     tradingName:
       "Inzterior is the trading name of Istory Design Studio (SSM Reg. No. SA0647003-M).",
+    follow: "Follow",
+    facebook: "Facebook",
+    instagram: "Instagram",
+    tiktok: "TikTok",
   },
   languagePopup: {
     heading: "Choose your language",

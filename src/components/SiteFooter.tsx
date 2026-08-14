@@ -34,6 +34,24 @@ export default function SiteFooter({ dict }: { dict: Dictionary["footer"] }) {
               <li><a href="mailto:inquiry@inzterior.com" className="hover:text-[var(--accent-soft)]">inquiry@inzterior.com</a></li>
               <li>{dict.location}</li>
             </ul>
+            <h4 className="mt-6 mb-4 text-xs tracking-wide text-[#f5f6f3]">{dict.follow}</h4>
+            <ul className="flex gap-4 text-sm">
+              <li>
+                <a href="https://facebook.com/Inzterior" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--accent-soft)]">
+                  {dict.facebook}
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/inzterior" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--accent-soft)]">
+                  {dict.instagram}
+                </a>
+              </li>
+              <li>
+                <a href="https://www.tiktok.com/@inzterior" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--accent-soft)]">
+                  {dict.tiktok}
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 
