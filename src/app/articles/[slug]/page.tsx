@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ARTICLE_SLUGS, BASE_URL, formatDate, getArticleModule } from "@/lib/articles";
 import { AUTHORS } from "@/lib/authors";
+import { getLocale, getDictionary } from "@/lib/i18n";
 
 export const dynamicParams = false;
 
@@ -46,6 +47,9 @@ export default async function ArticlePage({
 
   const { meta, default: Content } = await getArticleModule(slug);
   const author = AUTHORS[meta.author];
+  const locale = await getLocale();
+  const dict = getDictionary(locale);
+  const t = dict.articles;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -74,7 +78,9 @@ export default async function ArticlePage({
 
       <section className="border-b border-[var(--line)] py-16">
         <div className="mx-auto max-w-3xl px-6">
-          <span className="mb-4 block text-sm font-semibold text-[var(--accent)]">Articles</span>
+          <span className="mb-4 block text-sm font-semibold text-[var(--accent)]">
+            {t.eyebrow}
+          </span>
           <h1 className="text-3xl font-semibold sm:text-4xl">{meta.title}</h1>
           <div className="mt-4 flex flex-wrap items-center gap-2 text-sm text-[var(--ink-soft)]">
             <Link href={author.href} className="font-medium text-[var(--ink)] hover:underline">
@@ -84,14 +90,20 @@ export default async function ArticlePage({
             <span>{author.role}</span>
           </div>
           <div className="mt-1 text-xs text-[var(--ink-soft)]">
-            Published <time dateTime={meta.publishedAt}>{formatDate(meta.publishedAt)}</time>
+            {t.published} <time dateTime={meta.publishedAt}>{formatDate(meta.publishedAt)}</time>
             {meta.updatedAt !== meta.publishedAt && (
               <>
-                {" · Updated "}
+                {" · "}
+                {t.updated}{" "}
                 <time dateTime={meta.updatedAt}>{formatDate(meta.updatedAt)}</time>
               </>
             )}
           </div>
+          {locale !== "en" && (
+            <p className="mt-4 border border-[var(--line)] bg-[var(--bg-panel)] px-4 py-3 text-sm text-[var(--ink-soft)]">
+              {t.englishOnlyNotice}
+            </p>
+          )}
         </div>
       </section>
 
@@ -106,7 +118,7 @@ export default async function ArticlePage({
         />
       </div>
       <p className="mx-auto max-w-3xl px-6 pt-2 text-right text-xs text-[var(--ink-soft)]">
-        Photo by{" "}
+        {t.photoBy}{" "}
         <a
           href={meta.heroImage.creditUrl}
           className="underline"
@@ -115,7 +127,7 @@ export default async function ArticlePage({
         >
           {meta.heroImage.credit}
         </a>{" "}
-        on Pexels
+        {t.onPexels}
       </p>
 
       <div className="mx-auto max-w-3xl px-6 py-12">
@@ -124,9 +136,9 @@ export default async function ArticlePage({
 
       <section className="border-t border-[var(--line)] py-16 text-center">
         <div className="mx-auto max-w-3xl px-6">
-          <h2 className="text-2xl font-semibold sm:text-3xl">Ready to talk about your space?</h2>
+          <h2 className="text-2xl font-semibold sm:text-3xl">{t.ctaHeading}</h2>
           <Link href="/contact" className="btn btn-primary mt-6">
-            Start a Project
+            {t.ctaButton}
           </Link>
         </div>
       </section>

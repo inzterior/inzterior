@@ -372,6 +372,19 @@ export const ms: Dictionary = {
       "Kami sedang mengambil gambar dan mendokumentasikan projek Iskandar Puteri semasa ketika ia disiapkan — pelan lantai, kemajuan di tapak, dan ruang siap akan dipaparkan di sini secara terus, bukan imej stok.",
     activeButton: "Tanya Tentang Projek Yang Sedang Berjalan",
   },
+  articles: {
+    eyebrow: "Artikel",
+    heading: "Jawapan terus terang tentang ubah suai di Johor.",
+    lead: "Panduan praktikal tentang kos, kontrak, dan proses daripada pasukan Inzterior — berdasarkan apa yang kami lihat sendiri menjalankan kerja ini di Iskandar Puteri dan Johor Bahru.",
+    empty: "Artikel baharu akan datang tidak lama lagi — sila kembali semula.",
+    published: "Diterbitkan",
+    updated: "Dikemas kini",
+    photoBy: "Foto oleh",
+    onPexels: "di Pexels",
+    ctaHeading: "Sedia untuk bincang tentang ruang anda?",
+    ctaButton: "Mulakan Projek",
+    englishOnlyNotice: "Artikel ini hanya tersedia dalam Bahasa Inggeris.",
+  },
   terms: {
     eyebrow: "Terma Kami",
     heading:

@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { BASE_URL, formatDate, getAllArticles } from "@/lib/articles";
 import { AUTHORS } from "@/lib/authors";
+import { getLocale, getDictionary } from "@/lib/i18n";
 
 const TITLE = "Articles";
 const DESCRIPTION =
@@ -21,28 +22,26 @@ export const metadata: Metadata = {
 
 export default async function ArticlesPage() {
   const articles = await getAllArticles();
+  const locale = await getLocale();
+  const dict = getDictionary(locale);
+  const t = dict.articles;
 
   return (
     <>
       <section className="border-b border-[var(--line)] py-20">
         <div className="mx-auto max-w-5xl px-6">
-          <span className="mb-4 block text-sm font-semibold text-[var(--accent)]">Articles</span>
-          <h1 className="max-w-2xl text-3xl font-semibold sm:text-4xl">
-            Straight answers on renovating in Johor.
-          </h1>
-          <p className="mt-4 max-w-xl text-[var(--ink-soft)]">
-            Practical guides on cost, contracts, and process from the Inzterior team — grounded in
-            what we actually see doing this work in Iskandar Puteri and Johor Bahru.
-          </p>
+          <span className="mb-4 block text-sm font-semibold text-[var(--accent)]">
+            {t.eyebrow}
+          </span>
+          <h1 className="max-w-2xl text-3xl font-semibold sm:text-4xl">{t.heading}</h1>
+          <p className="mt-4 max-w-xl text-[var(--ink-soft)]">{t.lead}</p>
         </div>
       </section>
 
       <section className="py-20">
         <div className="mx-auto max-w-5xl px-6">
           {articles.length === 0 ? (
-            <p className="text-[var(--ink-soft)]">
-              New articles are on the way — check back soon.
-            </p>
+            <p className="text-[var(--ink-soft)]">{t.empty}</p>
           ) : (
             <div className="grid gap-8 sm:grid-cols-2">
               {articles.map(({ slug, meta }) => (

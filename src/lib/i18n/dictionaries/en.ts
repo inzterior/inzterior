@@ -394,6 +394,19 @@ export const en = {
       "We're photographing and documenting current Iskandar Puteri projects as they complete — floor plans, on-site progress, and finished spaces will appear here directly, not stock imagery.",
     activeButton: "Ask About a Project in Progress",
   },
+  articles: {
+    eyebrow: "Articles",
+    heading: "Straight answers on renovating in Johor.",
+    lead: "Practical guides on cost, contracts, and process from the Inzterior team — grounded in what we actually see doing this work in Iskandar Puteri and Johor Bahru.",
+    empty: "New articles are on the way — check back soon.",
+    published: "Published",
+    updated: "Updated",
+    photoBy: "Photo by",
+    onPexels: "on Pexels",
+    ctaHeading: "Ready to talk about your space?",
+    ctaButton: "Start a Project",
+    englishOnlyNotice: "This article is available in English only.",
+  },
   terms: {
     eyebrow: "Our Terms",
     heading:
