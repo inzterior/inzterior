@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces, Work_Sans } from "next/font/google";
+import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
@@ -78,6 +79,19 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} className={`h-full antialiased ${fraunces.variable} ${workSans.variable}`}>
+      {/* Google tag (gtag.js) — beforeInteractive guarantees Next.js injects this into <head> */}
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-MQPYC0FMRX"
+        strategy="beforeInteractive"
+      />
+      <Script id="google-analytics" strategy="beforeInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-MQPYC0FMRX');
+        `}
+      </Script>
       <body className="flex min-h-full flex-col">
         {/* JSON-LD is our own generated data, not user input */}
         <script
