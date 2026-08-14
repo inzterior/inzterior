@@ -40,6 +40,7 @@ export const ARTICLE_SLUGS: string[] = [
   "living-room-design-ideas-johor-bahru-terrace-link-houses",
   "3d-visualization-interior-design-what-it-shows-you",
   "johor-climate-renovation-humidity-heat-materials",
+  "wet-kitchen-dry-kitchen-renovation-johor-bahru",
 ];
 
 export async function getArticleModule(slug: string): Promise<ArticleModule> {

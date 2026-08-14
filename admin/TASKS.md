@@ -2,7 +2,7 @@
 
 > Personal tracking only. Not part of the website. Source of truth for the daily 8am SGT check.
 
-Last updated: 2026-08-06
+Last updated: 2026-08-14
 Dashboard artifact: https://claude.ai/code/artifact/44fe990a-b099-47c5-a22e-21a8379abfc5 (source: `admin/dashboard.html`, republish with this `url` to keep the link stable)
 Game plan: `admin/game-plan-2026-h2.md` (Aug 1 – Dec 31 2026, phased)
 Market research: `admin/research/sg-my-market-research-2026-07-29.md`
