@@ -84,6 +84,13 @@ export const en = {
     closingLead:
       "Whether it's a new home, an office fit-out, or a single room refresh — tell us about it.",
     closingCta: "Book a Consultation",
+    trustBar: [
+      "Written Contract",
+      "Staged Payments",
+      "Progress Updates",
+      "6-Month Warranty",
+      "SSM Registered",
+    ],
   },
   processTimeline: {
     eyebrow: "How It Works",

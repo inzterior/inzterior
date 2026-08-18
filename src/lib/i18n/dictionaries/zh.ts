@@ -59,6 +59,7 @@ export const zh: Dictionary = {
     closingHeading: "心中已有理想空间？",
     closingLead: "无论是新家、办公室翻新，还是单一房间的更新——都欢迎与我们分享。",
     closingCta: "预约咨询",
+    trustBar: ["书面合约", "分阶段付款", "进度更新", "6个月保修", "SSM注册"],
   },
   processTimeline: {
     eyebrow: "我们的运作流程",

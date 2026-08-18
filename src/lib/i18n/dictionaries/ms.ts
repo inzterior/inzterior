@@ -63,6 +63,13 @@ export const ms: Dictionary = {
     closingLead:
       "Sama ada rumah baharu, ubah suai pejabat, atau kemas kini satu bilik — beritahu kami.",
     closingCta: "Tempah Konsultasi",
+    trustBar: [
+      "Kontrak Bertulis",
+      "Pembayaran Berperingkat",
+      "Kemas Kini Progres",
+      "Waranti 6 Bulan",
+      "Berdaftar SSM",
+    ],
   },
   processTimeline: {
     eyebrow: "Cara Kami Bekerja",

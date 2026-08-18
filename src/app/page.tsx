@@ -48,6 +48,23 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* Trust bar */}
+      <section className="border-y border-[var(--line)] bg-[var(--bg-panel)] py-5">
+        <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-center gap-2.5 px-6 sm:gap-3">
+          {t.trustBar.map((point) => (
+            <span
+              key={point}
+              className="inline-flex items-center gap-1.5 rounded-full border border-[var(--line)] bg-[var(--bg)] px-3.5 py-1.5 text-xs font-semibold text-[var(--ink-soft)] sm:text-sm"
+            >
+              <span className="text-[var(--accent)]" aria-hidden>
+                ✓
+              </span>
+              {point}
+            </span>
+          ))}
+        </div>
+      </section>
+
       {/* Journey */}
       <ProcessTimeline dict={dict.processTimeline} paymentStages={dict.paymentStages} />
 

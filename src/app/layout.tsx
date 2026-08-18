@@ -79,20 +79,20 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} className={`h-full antialiased ${fraunces.variable} ${workSans.variable}`}>
-      {/* Google tag (gtag.js) — beforeInteractive guarantees Next.js injects this into <head> */}
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-MQPYC0FMRX"
-        strategy="beforeInteractive"
-      />
-      <Script id="google-analytics" strategy="beforeInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-MQPYC0FMRX');
-        `}
-      </Script>
       <body className="flex min-h-full flex-col">
+        {/* Google tag (gtag.js) — beforeInteractive guarantees Next.js hoists this into <head> */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-MQPYC0FMRX"
+          strategy="beforeInteractive"
+        />
+        <Script id="google-analytics" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-MQPYC0FMRX');
+          `}
+        </Script>
         {/* JSON-LD is our own generated data, not user input */}
         <script
           type="application/ld+json"
