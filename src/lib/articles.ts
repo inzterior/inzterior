@@ -44,6 +44,7 @@ export const ARTICLE_SLUGS: string[] = [
   "bathroom-renovation-johor-bahru-waterproofing-layout",
   "renovation-permit-johor-bahru-mbjb-approval",
   "new-condo-defect-inspection-before-renovating-johor-bahru",
+  "rewiring-old-house-renovation-johor-bahru",
 ];
 
 export async function getArticleModule(slug: string): Promise<ArticleModule> {
