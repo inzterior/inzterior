@@ -134,28 +134,28 @@ export const en = {
   paymentStages: [
     {
       n: 1,
-      title: "Design Deposit (~10%)",
-      body: "Starts the design phase. This is the only payment due before any design work begins — nothing is asked for upfront beyond it.",
+      title: "Deposit (10%)",
+      body: "Starts the project. This is the only payment due before any work begins — nothing is asked for upfront beyond it.",
     },
     {
       n: 2,
-      title: "Design Sign-off",
-      body: "Due once you've approved the final design and material selections — not before.",
+      title: "Start of Work (40%)",
+      body: "Due when work begins on-site — not before.",
     },
     {
       n: 3,
-      title: "Materials & Carpentry",
-      body: "Due when materials are ordered and carpentry production begins.",
+      title: "80% Completion (30%)",
+      body: "Due once the project reaches 80% completion — matched to what's physically been done.",
     },
     {
       n: 4,
-      title: "On-Site Installation",
-      body: "Due as on-site work is carried out — matched to what's physically been installed.",
+      title: "Furniture Installation (10%)",
+      body: "Due when furniture is installed on-site.",
     },
     {
       n: 5,
-      title: "Handover",
-      body: "The final payment, due at practical completion and handover of the finished space.",
+      title: "Completion & Key Collection (Remaining)",
+      body: "The final payment, due at practical completion and handover of your keys.",
     },
   ],
   services: {
@@ -266,11 +266,11 @@ export const en = {
     projectTypeLabel: "Project Type",
     selectOne: "Select one",
     options: {
-      residentialFull: "Residential — Full Home",
-      residentialSingle: "Residential — Single Room",
-      commercialOffice: "Commercial / Office",
-      renovation: "Renovation",
-      consultationOnly: "Consultation Only",
+      singleStory: "Single Story",
+      doubleStory: "Double Story",
+      clusterHouse: "Cluster House",
+      semiD: "Semi-D",
+      bungalow: "Bungalow",
     },
     messageLabel: "Tell us about your space",
     messagePlaceholder:
@@ -422,7 +422,7 @@ export const en = {
     paymentEyebrow: "Payment Structure",
     paymentHeading: "How payments work, stage by stage",
     paymentFootnote:
-      "The exact percentage for each stage is set out in your project's written contract, calculated against your total project value once we've scoped the work — so you know what's due, and why, before you ever pay it.",
+      "These percentages are fixed for every client and written into your contract — calculated against your total project value once we've scoped the work, so you know what's due, and why, before you ever pay it.",
     contextBoxLabel: "For context:",
     contextBoxBody:
       "Singapore's strictest renovation consumer-protection scheme caps deposits at 20% of project value. Malaysia has no equivalent scheme — deposits asked upfront, before any contract is signed, are often well above that. Our design deposit is roughly half of Singapore's cap, and released in stages tied to what's actually been done, not a fixed calendar date.",

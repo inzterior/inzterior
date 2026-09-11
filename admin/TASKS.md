@@ -2,10 +2,12 @@
 
 > Personal tracking only. Not part of the website. Source of truth for the daily 8am SGT check.
 
-Last updated: 2026-08-14
+Last updated: 2026-08-18
 Dashboard artifact: https://claude.ai/code/artifact/44fe990a-b099-47c5-a22e-21a8379abfc5 (source: `admin/dashboard.html`, republish with this `url` to keep the link stable)
 Game plan: `admin/game-plan-2026-h2.md` (Aug 1 – Dec 31 2026, phased)
 Market research: `admin/research/sg-my-market-research-2026-07-29.md`
+Google Business Profile setup: `admin/marketing/google-business-profile-listing-kit.md` (copy-paste kit — requires manual setup with your own Google login, not automatable)
+Review-request ritual: `admin/marketing/review-request-ritual.md` (process + WhatsApp templates), tracked in `admin/marketing/review-log.md`
 
 ---
 
@@ -24,7 +26,7 @@ Market research: `admin/research/sg-my-market-research-2026-07-29.md`
 - [x] Estimate page — real copy + working quote calculator component
 - [x] Portfolio page — real, finished page copy (gallery photos still pending, but page itself is not boilerplate)
 - [x] Services page — real copy, six defined service lines
-- [x] Terms page (`/terms`) — payment structure, written contract, warranty, legal identity, entity-type disclosure (shipped 2026-07-29). Milestone percentages and final warranty duration are placeholders pending the Phase 0 decision in the game plan.
+- [x] Terms page (`/terms`) — payment structure, written contract, warranty, legal identity, entity-type disclosure (shipped 2026-07-29; milestone percentages finalized 2026-09-11 — see §3 deposit ladder). Final warranty duration is still a placeholder pending the Phase 0 decision in the game plan.
 - [x] Deploy to production — live at https://inzterior-lac.vercel.app (2026-07-30). Custom domain (inzterior.com) and GitHub auto-deploy still pending — see Notes.
 - [x] Point inzterior.com to the Vercel deployment — confirmed live 2026-07-30 on the correct project (`istory1/inzterior`, see Notes). The earlier DNS check that suggested it was still parked was reading stale/cached info — it was already correctly configured.
 
@@ -38,7 +40,7 @@ Market research: `admin/research/sg-my-market-research-2026-07-29.md`
 - [x] Terms of service / privacy policy for website — legal boilerplate shipped at `/terms-of-service` and `/privacy-policy` (2026-07-30), linked from footer. Both pages flag themselves as unreviewed templates — still needs a pass from a Malaysian lawyer before treating as final.
 - [ ] Standard client contract covering scope, payment terms, liability — needs real legal drafting (game plan Phase 1.10)
 - [ ] Warranty structure decision (keep 6mo flat / extend to 12mo / split 12mo carpentry–6mo wet works) — Billy + Fuyi, game plan Phase 0.1
-- [ ] Deposit ladder finalized — percentages per milestone + retention — Billy + Fuyi, game plan Phase 0.2
+- [x] Deposit ladder finalized (2026-09-11) — Deposit 10% → Start of Work 40% → 80% Completion 30% → Furniture Installation 10% → Completion & Key Collection (remaining 10%). Shipped to `/terms` payment structure and site copy (all 3 locales). Entity type stays SSM sole proprietorship (Istory Design Studio) for now — no change from current site copy.
 - [ ] Referral mechanic drafted (credit or warranty-extension model, not cash — game plan Phase 2.10)
 
 ## 4. Accounting & Admin
@@ -54,7 +56,7 @@ Market research: `admin/research/sg-my-market-research-2026-07-29.md`
 
 ## 5. Social Media
 - [ ] Content pipeline/workflow defined (new — separate from GuidesBooks workflow)
-- [ ] Profile branding/bio completed on each platform
+- [x] Profile branding/bio completed on each platform — logo/cover already set from earlier session; bios pasted 2026-08-14 using the brand-voice skill's calibrated copy. Verified via browser: FB Page description landed exactly as drafted; Instagram bio landed (near-exact wording); TikTok bio landed but missing "🏠 Iskandar Puteri |" (just says "Interior design Contracts + staged payments, no surprises" — location/keyword dropped, worth fixing); RedNote not independently verified (this browser isn't logged into RedNote, which is normally managed via the mobile app) — user reports it's done. Also noticed: FB and TikTok display names were shortened from "Inzterior Design" to "Inzterior" during this edit — not something we asked for, flagging in case it wasn't intentional.
 - [ ] First posts scheduled
 - [ ] Instagram: carousel case studies + trust-architecture Highlights (Terms/Payments/Warranty/Site Notes) launched
 - [ ] Facebook: long-form posts + local group presence launched
@@ -62,8 +64,8 @@ Market research: `admin/research/sg-my-market-research-2026-07-29.md`
 - [ ] TikTok: "what this actually costs" / site-walk / "ask before you sign" series launched, Billy on camera
 
 ## 6. Marketing
-- [ ] Google Business Profile listing
-- [ ] Review-request ritual installed into the handover process (operational, not a webpage)
+- [x] Google Business Profile listing — claimed the pre-existing Google-auto-generated Maps entry (2026-08-14), set to service-area business (public address pin confirmed gone after switching), email verification cleared same day. Setup details and copy-paste content: `admin/marketing/google-business-profile-listing-kit.md`. Still open: add Billy/Jackie as additional Managers, add photos (blocked on portfolio photos in §3), confirm hours show "By appointment only" and description/services/category all landed as drafted.
+- [x] Review-request ritual installed into the handover process (operational, not a webpage) — drafted 2026-08-14: two-touch model (verbal ask at handover walkthrough + WhatsApp with direct link 7-14 days later, one reminder max), attached to the existing Milestone 5/Handover payment stage, explicit no-incentive rule per Google policy. Full process + WhatsApp templates: `admin/marketing/review-request-ritual.md`, tracked per-client in `admin/marketing/review-log.md` (empty until the next real handover — this is the process going live, not proof it's been used yet). Direct review link (`https://g.page/r/CdhhwY68WAFgEBM/review`) confirmed and dropped into both templates 2026-08-14. Still needs: Billy/Jackie briefed since they run the actual handovers.
 - [ ] Google review count target: 30 dated, photo-attached reviews by end of 2026
 
 ## 7. Trust & Reputation Assets

@@ -100,28 +100,28 @@ export const zh: Dictionary = {
   paymentStages: [
     {
       n: 1,
-      title: "设计订金（约10%）",
-      body: "启动设计阶段。这是唯一一笔在任何设计工作开始前需支付的款项——除此之外不会预先要求任何费用。",
+      title: "订金（10%）",
+      body: "启动项目。这是唯一一笔在任何工程开始前需支付的款项——除此之外不会预先要求任何费用。",
     },
     {
       n: 2,
-      title: "设计确认",
-      body: "在您确认最终设计方案与材料选择后支付——而非在此之前。",
+      title: "工程开始（40%）",
+      body: "在现场工程开始时支付——而非在此之前。",
     },
     {
       n: 3,
-      title: "材料与木工工程",
-      body: "在材料订购及木工制作开始时支付。",
+      title: "完成80%（30%）",
+      body: "在项目完成80%时支付——根据现场实际完成的进度。",
     },
     {
       n: 4,
-      title: "现场安装",
-      body: "根据现场实际完成的安装进度支付。",
+      title: "家具安装（10%）",
+      body: "在现场安装家具时支付。",
     },
     {
       n: 5,
-      title: "交付",
-      body: "最后一笔款项，在实际完工及空间交付时支付。",
+      title: "完工与交钥匙（余款）",
+      body: "最后一笔款项，在实际完工及交付钥匙时支付。",
     },
   ],
   services: {
@@ -230,11 +230,11 @@ export const zh: Dictionary = {
     projectTypeLabel: "项目类型",
     selectOne: "请选择",
     options: {
-      residentialFull: "住宅——全屋",
-      residentialSingle: "住宅——单一房间",
-      commercialOffice: "商业/办公室",
-      renovation: "翻新工程",
-      consultationOnly: "仅咨询",
+      singleStory: "单层",
+      doubleStory: "双层",
+      clusterHouse: "组合式排屋",
+      semiD: "半独立式",
+      bungalow: "独立式洋房",
     },
     messageLabel: "请描述您的空间需求",
     messagePlaceholder: "地点、面积、预算范围、时间安排，以及您希望达成的效果……",
@@ -382,7 +382,7 @@ export const zh: Dictionary = {
     paymentEyebrow: "付款结构",
     paymentHeading: "付款如何分阶段进行",
     paymentFootnote:
-      "每个阶段的确切百分比将在我们完成工程范围评估后，列明于您项目的书面合约中，并根据项目总价值计算——让您在支付之前，就清楚知道该付多少、为何要付。",
+      "这些百分比对每位客户都是固定的，并会写入您的合约中——待我们完成工程范围评估后，根据项目总价值计算，让您在支付之前，就清楚知道该付多少、为何要付。",
     contextBoxLabel: "背景资讯：",
     contextBoxBody:
       "新加坡最严格的翻新消费者保护制度，将订金上限设定为项目价值的20%。马来西亚目前没有类似制度——在签署任何合约之前预先索取的订金，往往远高于此。我们的设计订金大约只是新加坡上限的一半，并按实际完成的工作分阶段释放，而非依照固定的日期。",

@@ -113,28 +113,28 @@ export const ms: Dictionary = {
   paymentStages: [
     {
       n: 1,
-      title: "Deposit Reka Bentuk (~10%)",
-      body: "Memulakan fasa reka bentuk. Ini satu-satunya bayaran yang perlu dijelaskan sebelum sebarang kerja reka bentuk bermula — tiada apa-apa lagi diminta di peringkat awal.",
+      title: "Deposit (10%)",
+      body: "Memulakan projek. Ini satu-satunya bayaran yang perlu dijelaskan sebelum sebarang kerja bermula — tiada apa-apa lagi diminta di peringkat awal.",
     },
     {
       n: 2,
-      title: "Persetujuan Reka Bentuk",
-      body: "Perlu dijelaskan sebaik sahaja anda meluluskan reka bentuk akhir dan pemilihan bahan — bukan sebelum itu.",
+      title: "Permulaan Kerja (40%)",
+      body: "Perlu dijelaskan apabila kerja di tapak bermula — bukan sebelum itu.",
     },
     {
       n: 3,
-      title: "Bahan & Pertukangan",
-      body: "Perlu dijelaskan apabila bahan ditempah dan pengeluaran pertukangan bermula.",
+      title: "Penyiapan 80% (30%)",
+      body: "Perlu dijelaskan sebaik sahaja projek mencapai 80% siap — sepadan dengan apa yang telah dilaksanakan secara fizikal.",
     },
     {
       n: 4,
-      title: "Pemasangan Di Tapak",
-      body: "Perlu dijelaskan semasa kerja di tapak dijalankan — sepadan dengan apa yang telah dipasang secara fizikal.",
+      title: "Pemasangan Perabot (10%)",
+      body: "Perlu dijelaskan apabila perabot dipasang di tapak.",
     },
     {
       n: 5,
-      title: "Serahan",
-      body: "Bayaran akhir, perlu dijelaskan semasa penyiapan praktikal dan penyerahan ruang yang telah siap.",
+      title: "Penyiapan & Penyerahan Kunci (Baki)",
+      body: "Bayaran akhir, perlu dijelaskan semasa penyiapan praktikal dan penyerahan kunci anda.",
     },
   ],
   services: {
@@ -245,11 +245,11 @@ export const ms: Dictionary = {
     projectTypeLabel: "Jenis Projek",
     selectOne: "Pilih satu",
     options: {
-      residentialFull: "Kediaman — Rumah Penuh",
-      residentialSingle: "Kediaman — Bilik Tunggal",
-      commercialOffice: "Komersial / Pejabat",
-      renovation: "Ubah Suai",
-      consultationOnly: "Konsultasi Sahaja",
+      singleStory: "Setingkat",
+      doubleStory: "Dua Tingkat",
+      clusterHouse: "Rumah Kluster",
+      semiD: "Semi-D",
+      bungalow: "Banglo",
     },
     messageLabel: "Ceritakan tentang ruang anda",
     messagePlaceholder: "Lokasi, saiz, julat bajet, garis masa, dan apa yang anda harapkan...",
@@ -400,7 +400,7 @@ export const ms: Dictionary = {
     paymentEyebrow: "Struktur Pembayaran",
     paymentHeading: "Cara pembayaran berfungsi, peringkat demi peringkat",
     paymentFootnote:
-      "Peratusan tepat untuk setiap peringkat ditetapkan dalam kontrak bertulis projek anda, dikira berdasarkan jumlah nilai projek anda sebaik sahaja kami mengskop kerja tersebut — supaya anda tahu apa yang perlu dibayar, dan sebabnya, sebelum anda membayarnya.",
+      "Peratusan ini tetap untuk setiap pelanggan dan ditulis dalam kontrak anda — dikira berdasarkan jumlah nilai projek anda sebaik sahaja kami mengskop kerja tersebut, supaya anda tahu apa yang perlu dibayar, dan sebabnya, sebelum anda membayarnya.",
     contextBoxLabel: "Untuk konteks:",
     contextBoxBody:
       "Skim perlindungan pengguna ubah suai paling ketat di Singapura mengehadkan deposit kepada 20% daripada nilai projek. Malaysia tiada skim setara — deposit yang diminta di peringkat awal, sebelum sebarang kontrak ditandatangani, selalunya jauh melebihi itu. Deposit reka bentuk kami adalah kira-kira separuh daripada had Singapura, dan dilepaskan secara berperingkat berdasarkan apa yang sebenarnya telah disiapkan, bukan tarikh kalendar tetap.",

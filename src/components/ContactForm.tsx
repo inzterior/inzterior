@@ -106,11 +106,11 @@ export default function ContactForm({ dict }: { dict: Dictionary["contactForm"] 
             className="w-full border border-neutral-300 px-3 py-2.5 text-sm"
           >
             <option value="">{dict.selectOne}</option>
-            <option value="Residential — Full Home">{dict.options.residentialFull}</option>
-            <option value="Residential — Single Room">{dict.options.residentialSingle}</option>
-            <option value="Commercial / Office">{dict.options.commercialOffice}</option>
-            <option value="Renovation">{dict.options.renovation}</option>
-            <option value="Consultation Only">{dict.options.consultationOnly}</option>
+            <option value="Single Story">{dict.options.singleStory}</option>
+            <option value="Double Story">{dict.options.doubleStory}</option>
+            <option value="Cluster House">{dict.options.clusterHouse}</option>
+            <option value="Semi-D">{dict.options.semiD}</option>
+            <option value="Bungalow">{dict.options.bungalow}</option>
           </select>
         </div>
       </div>
