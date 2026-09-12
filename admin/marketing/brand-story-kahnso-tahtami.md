@@ -46,13 +46,16 @@ Kahnso is part of the iStory group, alongside Inzterior Interior Design, so ever
 
 ## Founder note — "Why we built Kahnso"
 
-*Market-pain version (chosen over a personal anecdote). Draft pending owner sign-off on the "after years at Inzterior" framing.*
+*Market-pain version (chosen over a personal anecdote). Approved 2026-09-12.*
+
+> **COPY GUARDRAIL — read before writing anything for these brands.**
+> Inzterior, Kahnso and Tahtami all launched in 2026. **No copy may claim years of experience, a track record, "established", "since 20XX", numbers of past projects, or testimonials we do not have.** A new brand cannot borrow credibility it has not earned; it earns trust by being verifiable instead. Substitute proof for tenure: show the cabinet carcass, name the steel grade, publish the warranty terms, put a cut-away unit in the showroom.
 
 > **Why we built Kahnso**
 >
 > In Malaysia, kitchens are sold by the door and priced by the foot. Homeowners are shown finishes and handles, and almost never told what the cabinet body is actually made of. It is usually particleboard or MDF, and that is exactly where kitchens fail: the base cabinet under the sink swells, the plinth softens, termites find the timber, and by year five a kitchen that looked perfect at handover is quietly falling apart behind its pretty doors.
 >
-> After years of designing homes at Inzterior, we were tired of watching good kitchens fail from the inside. So we changed the part nobody looks at. Kahnso cabinets are stainless steel throughout, not just on the surface. Nothing to swell, nothing for termites to eat, nothing hidden.
+> We are a new company, so we will not tell you how long we have been doing this. We will tell you what we changed: the part nobody looks at. Kahnso cabinets are stainless steel throughout, not only on the surface. Nothing to swell, nothing for termites to eat, nothing hidden. Come and open the doors, look under the sink, check the joints. Judge the carcass, not the showroom.
 >
 > *We show you the inside first.*
 
