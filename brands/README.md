@@ -35,16 +35,27 @@ These are **interim marks** built on the approved K1 and T1 concepts (see
 `admin/marketing/logo-direction-kahnso-tahtami.md`). Replace them when a designer
 delivers final artwork; keep the same filenames so nothing else needs updating.
 
-## Deploying to Vercel
+## Deployment (live)
 
-One Vercel project per brand, each a static deploy with no build step:
+Both brands are deployed on Vercel under the `istory1` team, one project each,
+git-connected to `github.com/inzterior/inzterior` on `master`. A push to `master`
+redeploys both automatically.
 
-1. `vercel` → new project → set **root directory** to `brands/kahnso` (then repeat for `brands/tahtami`)
-2. Framework preset: **Other**. Build command: none. Output directory: `.`
-3. Add the domain (`kahnso.com` / `tahtami.com`) in the project's Domains settings,
-   plus the `www` redirect, and point the registrar's nameservers or A/CNAME records
-   at Vercel as instructed there.
+| Project | Root directory | Production domain |
+|---|---|---|
+| `kahnso` | `brands/kahnso` | kahnso.com (+ www) |
+| `tahtami` | `brands/tahtami` | tahtami.com (+ www) |
 
+Framework preset: Other. No build step — files are served as-is.
+
+### DNS (set at Namecheap, per domain)
+
+| Type | Host | Value |
+|---|---|---|
+| A | `@` | `76.76.21.21` |
+| CNAME | `www` | `cname.vercel-dns.com` |
+
+Remove Namecheap's default parking/redirect records first or they conflict.
 Both domains were purchased 2026-09-11.
 
 ## TODO before launch
