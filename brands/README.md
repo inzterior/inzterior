@@ -14,10 +14,12 @@ brands/
 | File | Use |
 |---|---|
 | `assets/mark.svg` | Vector mark, transparent background. Favicon, print, designer handoff. |
-| `assets/avatar.svg` | Square mark on brand background. Source for the PNGs. |
+| `assets/avatar.svg` | Square mark + wordmark on brand background. Source for the avatar PNGs. |
+| `assets/lockup.svg` | Mark + wordmark + tagline + endorsement line. Source for the lockup PNG. |
 | `assets/png/<brand>-avatar-1024.png` | **Facebook / Instagram profile picture upload.** |
 | `assets/png/<brand>-avatar-512.png` | General web use. |
 | `assets/png/<brand>-avatar-180.png` | Apple touch icon / small avatars. |
+| `assets/png/<brand>-lockup-1200.png` | Facebook cover, link preview, slide/deck title, email signature. |
 
 Regenerate the PNGs after editing an `avatar.svg`:
 

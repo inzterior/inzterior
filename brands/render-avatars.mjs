@@ -7,6 +7,7 @@ import { fileURLToPath } from 'node:url';
 
 const brands = ['kahnso', 'tahtami'];
 const sizes = [1024, 512, 180];
+const lockupWidth = 1200;
 const root = dirname(fileURLToPath(import.meta.url));
 
 for (const brand of brands) {
@@ -19,4 +20,9 @@ for (const brand of brands) {
     await sharp(src, { density: 384 }).resize(size, size).png().toFile(out);
     console.log(`wrote ${out}`);
   }
+
+  const lockupOut = join(outDir, `${brand}-lockup-${lockupWidth}.png`);
+  await sharp(join(root, brand, 'assets', 'lockup.svg'), { density: 288 })
+    .resize(lockupWidth).png().toFile(lockupOut);
+  console.log(`wrote ${lockupOut}`);
 }

@@ -1,6 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024" role="img" aria-label="Kahnso avatar">
   <title>Kahnso — profile mark</title>
   <rect width="1024" height="1024" fill="#1F2124"/>
-  <rect x="322" y="250" width="380" height="88" rx="10" fill="#B9BDC1"/>
-  <rect x="322" y="364" width="380" height="410" rx="10" fill="#B9BDC1"/>
+  <rect x="387" y="236" width="250" height="58" rx="7" fill="#B9BDC1"/>
+  <rect x="387" y="312" width="250" height="268" rx="7" fill="#B9BDC1"/>
+  <text x="512" y="742" text-anchor="middle" font-family="Segoe UI Light, Segoe UI, Arial, sans-serif"
+        font-size="104" letter-spacing="34" fill="#E6E7E8" dx="17">KAHNSO</text>
 </svg>
