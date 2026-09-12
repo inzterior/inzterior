@@ -43,8 +43,8 @@ Both domains were purchased 2026-09-11.
 
 ## TODO before launch
 
-- [ ] Set up `hello@kahnso.com` and `hello@tahtami.com` (or change the pages to a real
-      existing address) — the current addresses do not exist yet.
+- [ ] Both pages currently use the existing `inquiry@inzterior.com` address. Switch to
+      brand-specific mailboxes (`hello@kahnso.com` / `hello@tahtami.com`) once they exist.
 - [ ] Confirm "Launching 2026" wording once the showroom date is fixed
       (see `admin/marketing/showroom-launch-plan-2026.md`).
 - [ ] Add each brand's social links once the accounts exist.
