@@ -44,8 +44,26 @@ Kahnso is part of the iStory group, alongside Inzterior Interior Design, so ever
 
 *Simplicity, in steel.*
 
-> **[FOUNDER NOTE: to be written by the owner, 2–3 sentences]**
-> Why did iStory start a stainless steel brand? A real moment works best, e.g. a client's termite-damaged kitchen, or your own home. This is the one part of the story only you can write, and it's the part customers remember.
+## Founder note — "Why we built Kahnso"
+
+*Market-pain version (chosen over a personal anecdote). Draft pending owner sign-off on the "after years at Inzterior" framing.*
+
+> **Why we built Kahnso**
+>
+> In Malaysia, kitchens are sold by the door and priced by the foot. Homeowners are shown finishes and handles, and almost never told what the cabinet body is actually made of. It is usually particleboard or MDF, and that is exactly where kitchens fail: the base cabinet under the sink swells, the plinth softens, termites find the timber, and by year five a kitchen that looked perfect at handover is quietly falling apart behind its pretty doors.
+>
+> After years of designing homes at Inzterior, we were tired of watching good kitchens fail from the inside. So we changed the part nobody looks at. Kahnso cabinets are stainless steel throughout, not just on the surface. Nothing to swell, nothing for termites to eat, nothing hidden.
+>
+> *We show you the inside first.*
+
+**The five market pain points this is built on** (all verifiable by customers, no statistics claimed):
+1. Kitchens are sold by the door and priced by the foot; the carcass material is rarely disclosed.
+2. Wok cooking, steam, daily washing and year-round humidity attack the sink base cabinet first.
+3. Termites are a real local risk to timber and plywood carcasses.
+4. The usual durable alternative, aluminium, often feels cold and hardware-like rather than like furniture.
+5. Long warranties outlive the sub-contractors who gave them.
+
+**"We show you the inside first"** is strong enough to work as a campaign line in its own right: cut-away cabinet displays in the showroom, and social content showing the carcass before the door.
 
 ## Tagline options
 

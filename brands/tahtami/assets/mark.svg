@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" role="img" aria-label="Tahtami mark">
+  <title>Tahtami — the 4.5-mat pinwheel</title>
+  <g fill="#C9B98A">
+    <rect x="18" y="18" width="42.67" height="21.33"/>
+    <rect x="62" y="18" width="21.33" height="42.67"/>
+    <rect x="41.33" y="62" width="42.67" height="21.33"/>
+    <rect x="18" y="41.33" width="21.33" height="42.67"/>
+  </g>
+  <rect x="41.33" y="41.33" width="21.33" height="21.33" fill="#5E6B4E"/>
+</svg>

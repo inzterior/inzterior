@@ -13,6 +13,12 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev", "--", "--port", "3050"],
       "port": 3050
+    },
+    {
+      "name": "brands",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["brands/dev-server.mjs"],
+      "port": 4321
     }
   ]
 }

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024" role="img" aria-label="Tahtami avatar">
+  <title>Tahtami — profile mark</title>
+  <rect width="1024" height="1024" fill="#3E4535"/>
+  <g fill="#C9B98A">
+    <rect x="248" y="248" width="342" height="166"/>
+    <rect x="610" y="248" width="166" height="342"/>
+    <rect x="434" y="610" width="342" height="166"/>
+    <rect x="248" y="434" width="166" height="342"/>
+  </g>
+  <rect x="434" y="434" width="156" height="156" fill="#F3EEE4"/>
+</svg>
