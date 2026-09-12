@@ -15,11 +15,15 @@ brands/
 |---|---|
 | `assets/mark.svg` | Vector mark, transparent background. Favicon, print, designer handoff. |
 | `assets/avatar.svg` | Square mark + wordmark on brand background. Source for the avatar PNGs. |
-| `assets/lockup.svg` | Mark + wordmark + tagline + endorsement line. Source for the lockup PNG. |
+| `assets/lockup.svg` | Mark + wordmark + tagline + endorsement line, on brand background. |
+| `assets/lockup-on-dark.svg` | Same lockup, transparent, light artwork for dark grounds. |
+| `assets/lockup-on-light.svg` | Same lockup, transparent, dark artwork for light grounds. |
 | `assets/png/<brand>-avatar-1024.png` | **Facebook / Instagram profile picture upload.** |
 | `assets/png/<brand>-avatar-512.png` | General web use. |
 | `assets/png/<brand>-avatar-180.png` | Apple touch icon / small avatars. |
 | `assets/png/<brand>-lockup-1200.png` | Facebook cover, link preview, slide/deck title, email signature. |
+| `assets/png/<brand>-lockup-on-dark-1200.png` | **Transparent.** Light artwork — place on dark photos or dark brand colours. |
+| `assets/png/<brand>-lockup-on-light-1200.png` | **Transparent.** Dark artwork — place on white, linen or light photos. |
 
 Regenerate the PNGs after editing an `avatar.svg`:
 

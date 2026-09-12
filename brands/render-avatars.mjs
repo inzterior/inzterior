@@ -21,8 +21,10 @@ for (const brand of brands) {
     console.log(`wrote ${out}`);
   }
 
-  const lockupOut = join(outDir, `${brand}-lockup-${lockupWidth}.png`);
-  await sharp(join(root, brand, 'assets', 'lockup.svg'), { density: 288 })
-    .resize(lockupWidth).png().toFile(lockupOut);
-  console.log(`wrote ${lockupOut}`);
+  for (const variant of ['lockup', 'lockup-on-dark', 'lockup-on-light']) {
+    const lockupOut = join(outDir, `${brand}-${variant}-${lockupWidth}.png`);
+    await sharp(join(root, brand, 'assets', `${variant}.svg`), { density: 288 })
+      .resize(lockupWidth).png().toFile(lockupOut);
+    console.log(`wrote ${lockupOut}`);
+  }
 }
