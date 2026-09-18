@@ -23,6 +23,8 @@ const workSans = Work_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(BASE_URL),
+  alternates: { canonical: "/" },
   title: {
     default: "Inzterior — Interior Design Studio, Iskandar Puteri",
     template: "%s — Inzterior",

@@ -2,7 +2,7 @@ import type { ComponentType } from "react";
 import type { AuthorId } from "./authors";
 import { AUTHORS } from "./authors";
 
-export const BASE_URL = "https://inzterior.com";
+export const BASE_URL = "https://www.inzterior.com";
 
 export type ArticleMeta = {
   title: string;
