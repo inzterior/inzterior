@@ -1,7 +1,16 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import ProcessTimeline from "@/components/ProcessTimeline";
 import { getLocale, getDictionary } from "@/lib/i18n";
+import { BASE_URL } from "@/lib/articles";
+
+export const metadata: Metadata = {
+  title: { absolute: "Interior Design Johor Bahru | Inzterior, Iskandar Puteri" },
+  description:
+    "Interior design and renovation in Johor Bahru and Iskandar Puteri. Written contract, staged payments and a six-month warranty, published before you call.",
+  alternates: { canonical: `${BASE_URL}/` },
+};
 
 export default async function Home() {
   const locale = await getLocale();
@@ -86,6 +95,33 @@ export default async function Home() {
           >
             {t.founderCta}
           </Link>
+        </div>
+      </section>
+
+      {/* Further reading — the two strongest articles, linked from the homepage
+          so they are one click from the site's most-linked page. */}
+      <section className="border-b border-[var(--line)] py-14">
+        <div className="mx-auto max-w-5xl px-6">
+          <h2 className="text-xl font-semibold">{t.readingHeading}</h2>
+          <p className="mt-2 max-w-xl text-[var(--ink-soft)]">{t.readingLead}</p>
+          <ul className="mt-6 flex flex-col gap-3">
+            <li>
+              <Link
+                href="/articles/spot-deposit-disappear-contractor-malaysia"
+                className="border-b border-[var(--taupe)] hover:border-[var(--accent)] hover:text-[var(--accent)]"
+              >
+                How to spot a deposit-and-disappear renovation contractor in Malaysia
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/articles/interior-design-cost-johor-bahru-iskandar-puteri"
+                className="border-b border-[var(--taupe)] hover:border-[var(--accent)] hover:text-[var(--accent)]"
+              >
+                Why renovation quotes in Johor Bahru and Iskandar Puteri vary so much
+              </Link>
+            </li>
+          </ul>
         </div>
       </section>
 

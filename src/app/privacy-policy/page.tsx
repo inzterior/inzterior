@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { BASE_URL } from "@/lib/articles";
 import { getLocale, getDictionary } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
+  title: { absolute: "Privacy Policy — Inzterior" },
   description:
-    "How Inzterior collects, uses, and protects personal data submitted through this website, under Malaysia's Personal Data Protection Act 2010.",
+    "How Inzterior collects, uses and protects personal data submitted through this website, under the Malaysian Personal Data Protection Act 2010.",
+  alternates: { canonical: `${BASE_URL}/privacy-policy` },
 };
 
 export default async function PrivacyPolicyPage() {

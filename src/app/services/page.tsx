@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
+import { BASE_URL } from "@/lib/articles";
 import Link from "next/link";
 import { getLocale, getDictionary } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: { absolute: "Interior Design & Renovation Services in Johor Bahru" },
   description:
-    "Residential, commercial, and renovation interior design services from Inzterior, Iskandar Puteri.",
+    "Residential, commercial and renovation work across Johor Bahru and Iskandar Puteri, scoped to the space rather than sold as a fixed package.",
+  alternates: { canonical: `${BASE_URL}/services` },
 };
 
 export default async function ServicesPage() {
@@ -33,6 +35,48 @@ export default async function ServicesPage() {
               <p className="text-sm text-[var(--ink-soft)]">{s.body}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Contextual links into the guides that explain what each service involves. */}
+      <section className="border-t border-[var(--line)] py-16">
+        <div className="mx-auto max-w-5xl px-6">
+          <h2 className="text-xl font-semibold">{t.readingHeading}</h2>
+          <p className="mt-2 max-w-xl text-[var(--ink-soft)]">{t.readingLead}</p>
+          <ul className="mt-6 flex flex-col gap-3">
+            <li>
+              <Link
+                href="/articles/interior-designer-vs-contractor-malaysia"
+                className="border-b border-[var(--taupe)] hover:border-[var(--accent)] hover:text-[var(--accent)]"
+              >
+                Interior designer or contractor-only: which route suits your job
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/articles/interior-design-contract-guide-malaysia"
+                className="border-b border-[var(--taupe)] hover:border-[var(--accent)] hover:text-[var(--accent)]"
+              >
+                What belongs in a Malaysian interior design contract
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/articles/renovation-timeline-malaysia"
+                className="border-b border-[var(--taupe)] hover:border-[var(--accent)] hover:text-[var(--accent)]"
+              >
+                How long a renovation really takes in Malaysia
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/articles/renovation-permit-johor-bahru"
+                className="border-b border-[var(--taupe)] hover:border-[var(--accent)] hover:text-[var(--accent)]"
+              >
+                Renovation permits in Johor Bahru: which of the four councils covers you
+              </Link>
+            </li>
+          </ul>
         </div>
       </section>
 

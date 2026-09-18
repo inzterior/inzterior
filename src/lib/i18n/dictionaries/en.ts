@@ -62,6 +62,8 @@ export const en = {
     ariaLabel: "Change language",
   },
   home: {
+    readingHeading: "Before you sign anything",
+    readingLead: "Two things worth reading before you brief anyone, us included.",
     eyebrow: "Interior Design Studio · Horizon Hills, Iskandar Puteri",
     headingPart1: "Spaces designed around how you",
     headingEmphasis: "actually",
@@ -159,6 +161,8 @@ export const en = {
     },
   ],
   services: {
+    readingHeading: "Read this before you brief us",
+    readingLead: "What the work involves, written before you ask us for a price.",
     eyebrow: "What We Do",
     heading: "Full-service interior design, from first sketch to final styling.",
     lead: "Every project is scoped to fit the space, the budget, and how you actually plan to use it — we don't sell one-size-fits-all packages.",
@@ -413,6 +417,7 @@ export const en = {
     ctaHeading: "Ready to talk about your space?",
     ctaButton: "Start a Project",
     englishOnlyNotice: "This article is available in English only.",
+    relatedHeading: "Related reading",
   },
   terms: {
     eyebrow: "Our Terms",

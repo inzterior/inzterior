@@ -41,6 +41,8 @@ export const ms: Dictionary = {
     ariaLabel: "Tukar bahasa",
   },
   home: {
+    readingHeading: "Sebelum anda menandatangani apa-apa",
+    readingLead: "Dua perkara yang wajar dibaca sebelum anda memberi taklimat kepada sesiapa, termasuk kami.",
     eyebrow: "Studio Reka Bentuk Dalaman · Horizon Hills, Iskandar Puteri",
     headingPart1: "Ruang direka bentuk mengikut cara anda",
     headingEmphasis: "sebenarnya",
@@ -138,6 +140,8 @@ export const ms: Dictionary = {
     },
   ],
   services: {
+    readingHeading: "Baca sebelum anda memberi taklimat kepada kami",
+    readingLead: "Apa yang terlibat dalam kerja ini, ditulis sebelum anda meminta harga.",
     eyebrow: "Apa Yang Kami Lakukan",
     heading: "Reka bentuk dalaman perkhidmatan penuh, dari lakaran pertama hingga gaya akhir.",
     lead: "Setiap projek diskopkan mengikut ruang, bajet, dan cara anda benar-benar merancang untuk menggunakannya — kami tidak menjual pakej sama rata untuk semua.",
@@ -391,6 +395,7 @@ export const ms: Dictionary = {
     ctaHeading: "Sedia untuk bincang tentang ruang anda?",
     ctaButton: "Mulakan Projek",
     englishOnlyNotice: "Artikel ini hanya tersedia dalam Bahasa Inggeris.",
+    relatedHeading: "Bacaan berkaitan",
   },
   terms: {
     eyebrow: "Terma Kami",

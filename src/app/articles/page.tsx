@@ -5,19 +5,29 @@ import { BASE_URL, formatDate, getAllArticles } from "@/lib/articles";
 import { AUTHORS } from "@/lib/authors";
 import { getLocale, getDictionary } from "@/lib/i18n";
 
-const TITLE = "Articles";
+const TITLE = "Renovation Guides for Johor Bahru Homeowners";
 const DESCRIPTION =
-  "Practical guides on renovation costs, contracts, and timelines in Iskandar Puteri and Johor Bahru, from the Inzterior team.";
+  "Practical guides on renovation cost, contracts, permits and timelines in Johor Bahru and Iskandar Puteri, written by the people doing the work.";
 
 export const metadata: Metadata = {
-  title: TITLE,
+  title: { absolute: TITLE },
   description: DESCRIPTION,
   alternates: { canonical: `${BASE_URL}/articles` },
   openGraph: {
     title: TITLE,
     description: DESCRIPTION,
+    url: `${BASE_URL}/articles`,
     type: "website",
   },
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
+    { "@type": "ListItem", position: 2, name: "Articles", item: `${BASE_URL}/articles` },
+  ],
 };
 
 export default async function ArticlesPage() {
@@ -28,6 +38,12 @@ export default async function ArticlesPage() {
 
   return (
     <>
+      {/* JSON-LD is our own generated data, not user input */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+
       <section className="border-b border-[var(--line)] py-20">
         <div className="mx-auto max-w-5xl px-6">
           <span className="mb-4 block text-sm font-semibold text-[var(--accent)]">

@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
+import { BASE_URL } from "@/lib/articles";
 import Link from "next/link";
 import { getLocale, getDictionary } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: { absolute: "About Inzterior — Interior Design Studio, Iskandar Puteri" },
   description:
-    "Inzterior is an Iskandar Puteri interior design studio built on written contracts and staged payments, founded by Billy Yeap, operating as Istory Design Studio (SSM Reg. No. SA0647003-M).",
+    "Istory Design Studio (SSM SA0647003-M), trading as Inzterior from Horizon Hills. Founded by Billy Yeap on written contracts and staged payments.",
+  alternates: { canonical: `${BASE_URL}/about` },
 };
 
 export default async function AboutPage() {

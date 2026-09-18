@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
+import { BASE_URL } from "@/lib/articles";
 import QuoteCalculator from "@/components/QuoteCalculator";
 import { getLocale, getDictionary } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "Estimate",
+  title: { absolute: "Renovation Cost Estimate for Johor Bahru Homes" },
   description:
-    "Get a preliminary price range for your interior design project in Iskandar Puteri, Johor — instant estimate, no obligation.",
+    "A preliminary ringgit range for your Johor Bahru or Iskandar Puteri project, calculated on this page. No obligation, and no phone number required.",
+  alternates: { canonical: `${BASE_URL}/estimate` },
 };
 
 export default async function EstimatePage() {

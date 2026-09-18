@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { BASE_URL } from "@/lib/articles";
 import { getLocale, getDictionary } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "Terms of Service",
+  title: { absolute: "Terms of Service — Inzterior" },
   description:
-    "The legal terms governing use of the Inzterior website — separate from the project payment, contract, and warranty terms described on our Terms page.",
+    "The legal terms governing use of the Inzterior website, separate from the project payment, contract and warranty terms set out on our Terms page.",
+  alternates: { canonical: `${BASE_URL}/terms-of-service` },
 };
 
 export default async function TermsOfServicePage() {
