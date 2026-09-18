@@ -42,7 +42,7 @@ export const ARTICLE_SLUGS: string[] = [
   "johor-climate-renovation-humidity-heat-materials",
   "wet-kitchen-dry-kitchen-renovation-johor-bahru",
   "bathroom-renovation-johor-bahru-waterproofing-layout",
-  "renovation-permit-johor-bahru-mbjb-approval",
+  "renovation-permit-johor-bahru",
   "new-condo-defect-inspection-before-renovating-johor-bahru",
   "rewiring-old-house-renovation-johor-bahru",
 ];
