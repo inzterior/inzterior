@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
+import { BASE_URL } from "@/lib/articles";
 import Link from "next/link";
 import { getLocale, getDictionary } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "Our Team",
+  title: { absolute: "Our Team — Inzterior Interior Design, Johor Bahru" },
   description:
-    "Meet the team behind Inzterior, an Iskandar Puteri interior design studio led by founder Billy Yeap under Istory Design Studio (SSM Reg. No. SA0647003-M).",
+    "The people behind Inzterior in Iskandar Puteri, led by founder Billy Yeap. Experience listed here is from previous firms, and is attributed as such.",
+  alternates: { canonical: `${BASE_URL}/team` },
 };
 
 export default async function TeamPage() {

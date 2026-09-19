@@ -39,6 +39,8 @@ export const zh: Dictionary = {
     ariaLabel: "切换语言",
   },
   home: {
+    readingHeading: "签约之前",
+    readingLead: "在你向任何人（包括我们）说明需求之前，值得先读的两篇。",
     eyebrow: "室内设计工作室 · Horizon Hills, Iskandar Puteri",
     headingPart1: "空间设计，围绕您",
     headingEmphasis: "真正",
@@ -125,6 +127,8 @@ export const zh: Dictionary = {
     },
   ],
   services: {
+    readingHeading: "给我们说明需求之前，先读这个",
+    readingLead: "这项工作实际包含什么，写在你询价之前。",
     eyebrow: "我们的服务",
     heading: "从初步草图到最终风格布置的一站式室内设计服务。",
     lead: "每个项目都会根据空间、预算，以及您实际的使用方式量身规划——我们不销售千篇一律的套装服务。",
@@ -374,6 +378,7 @@ export const zh: Dictionary = {
     ctaHeading: "准备好聊聊您的空间了吗？",
     ctaButton: "开始项目",
     englishOnlyNotice: "本文目前仅提供英文版本。",
+    relatedHeading: "延伸阅读",
   },
   terms: {
     eyebrow: "我们的条款",

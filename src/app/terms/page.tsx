@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
+import { BASE_URL } from "@/lib/articles";
 import Link from "next/link";
 import { getLocale, getDictionary } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "Our Terms",
+  title: { absolute: "Our Terms — Payment, Contract and Warranty" },
   description:
-    "How Inzterior structures payments, contracts, warranty, and legal identity — published before you ever pick up the phone. SSM Reg. No. SA0647003-M.",
+    "Our payment stages, contract terms and six-month warranty, published in full before you give us a phone number. The same terms apply to every client.",
+  alternates: { canonical: `${BASE_URL}/terms` },
 };
 
 export default async function TermsPage() {

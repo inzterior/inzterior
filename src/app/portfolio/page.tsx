@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
+import { BASE_URL } from "@/lib/articles";
 import PortfolioGallery from "@/components/PortfolioGallery";
 import { getLocale, getDictionary } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "Portfolio",
+  title: { absolute: "Portfolio — Inzterior Interior Design, Johor Bahru" },
   description:
-    "Concept studies and active project direction from Inzterior — residential and commercial interior design across Iskandar Puteri, Johor.",
+    "Concept studies and active project direction from our Horizon Hills studio. The imagery here is reference, not completed Inzterior work, and says so.",
+  alternates: { canonical: `${BASE_URL}/portfolio` },
 };
 
 export default async function PortfolioPage() {

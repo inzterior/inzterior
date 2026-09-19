@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
+import { BASE_URL } from "@/lib/articles";
 import ContactForm from "@/components/ContactForm";
 import { getLocale, getDictionary } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: { absolute: "Contact Inzterior — Interior Design, Iskandar Puteri" },
   description:
-    "Book a consultation with Inzterior, an Iskandar Puteri interior design studio. Email inquiry@inzterior.com.",
+    "Book a free discovery consultation for a Johor Bahru or Iskandar Puteri project. Email inquiry@inzterior.com or send the enquiry form on this page.",
+  alternates: { canonical: `${BASE_URL}/contact` },
 };
 
 export default async function ContactPage() {

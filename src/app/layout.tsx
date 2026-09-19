@@ -33,6 +33,18 @@ export const metadata: Metadata = {
     "Inzterior is a Malaysian interior design studio crafting thoughtful residential and commercial spaces, based in Horizon Hills, Iskandar Puteri.",
 };
 
+// HomeAndConstructionBusiness is a subtype of LocalBusiness, which is itself a
+// subtype of Organization — so this single node satisfies all three. Stacking a
+// separate LocalBusiness node alongside it would duplicate the entity, not
+// strengthen it.
+//
+// Deliberately ABSENT, because FACTS.md has no verified value and inventing one
+// is worse than omitting it:
+//   geo            — no surveyed latitude/longitude for the Horizon Hills unit
+//   openingHours   — business hours are still unset on the Google Business Profile
+//   aggregateRating / review — there are no reviews; never invent one
+//   foundingDate   — year founded is [UNVERIFIED]
+//   priceRange     — no approved price band (B7)
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "HomeAndConstructionBusiness",
@@ -46,9 +58,21 @@ const organizationJsonLd = {
   logo: `${BASE_URL}/icon.png`,
   image: `${BASE_URL}/icon.png`,
   email: "inquiry@inzterior.com",
+  telephone: "+60 13-980 9289",
+  knowsLanguage: ["en", "ms", "zh"],
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+60 13-980 9289",
+    email: "inquiry@inzterior.com",
+    contactType: "customer service",
+    areaServed: "MY",
+    availableLanguage: ["English", "Malay", "Chinese"],
+  },
   address: {
     "@type": "PostalAddress",
-    streetAddress: "No. 58A, Jalan Eka 3, Horizon Hills",
+    // Canonical NAP per _control/FACTS.md — keep identical across schema,
+    // Google Business Profile and every directory citation.
+    streetAddress: "No. 58A, 3, Jalan Eka, Horizon Hills",
     addressLocality: "Iskandar Puteri",
     addressRegion: "Johor",
     postalCode: "79100",
@@ -59,6 +83,15 @@ const organizationJsonLd = {
     { "@type": "City", name: "Johor Bahru" },
     { "@type": "AdministrativeArea", name: "Johor" },
   ],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Interior design and renovation services",
+    itemListElement: [
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Residential interior design" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Commercial interior design" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Renovation design and build" } },
+    ],
+  },
   founder: {
     "@type": "Person",
     name: "Billy Yeap",
