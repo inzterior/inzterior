@@ -1,19 +1,19 @@
 # Brand Story & Taglines — Kahnso & Tahtami
 
-*iStory group sister brands to Inzterior · Draft v1 · 2026-09-11*
+*ISTORY group sister brands to Inzterior · Draft v1 · 2026-09-11*
 
 ---
 
 ## Group architecture
 
 ```
-iStory Sdn Bhd (parent)
+ISTORY Design Studio (parent)
 ├── Inzterior — interior design & renovation
 ├── Kahnso    — stainless steel cabinets
 └── Tahtami   — vinyl / SPC flooring
 ```
 
-Endorsement line under each logo: **"An iStory company"**.
+Endorsement line under each logo: **"AN ISTORY COMPANY"**.
 Shared naming device: a well-known Japanese word, respelled with an "h" to guide pronunciation and make it ownable (Kanso → **Kahnso**, Tatami → **Tahtami**).
 
 ---
@@ -40,7 +40,7 @@ Stainless steel doesn't have those problems. It doesn't absorb water, it gives t
 
 Every Kahnso cabinet is designed with restraint: precise edges, quiet hardware and finishes chosen to last rather than to follow a trend. Fewer things, made better.
 
-Kahnso is part of the iStory group, alongside Inzterior Interior Design, so every kitchen is planned as part of the whole home, not a catalogue box.
+Kahnso is part of the ISTORY group, alongside Inzterior Interior Design, so every kitchen is planned as part of the whole home, not a catalogue box.
 
 *Simplicity, in steel.*
 
@@ -110,7 +110,7 @@ Tahtami reimagines the tatami for today. Our vinyl and SPC floors bring the look
 
 Many of our floors click-lock straight over existing tiles, so the upgrade comes without hacking, dust or weeks of disruption.
 
-Tahtami is part of the iStory group, alongside Inzterior Interior Design and Kahnso, so your floor is chosen as part of the whole home.
+Tahtami is part of the ISTORY group, alongside Inzterior Interior Design and Kahnso, so your floor is chosen as part of the whole home.
 
 *The modern tatami.*
 
