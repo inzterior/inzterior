@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { appendLeadToSheet, sendLeadNotification, type LeadInput } from "@/lib/leads";
+import { isValidPhone } from "@/lib/phone";
 
 export async function POST(request: Request) {
   let body: Record<string, unknown>;
@@ -15,8 +16,18 @@ export async function POST(request: Request) {
   const source = typeof body.source === "string" ? body.source.trim() : "Website";
   const details = typeof body.details === "string" ? body.details.trim() : "";
 
-  if (!name || !email) {
-    return NextResponse.json({ error: "Name and email are required." }, { status: 400 });
+  if (!name || !email || !phone) {
+    return NextResponse.json(
+      { error: "Name, email, and phone number are required." },
+      { status: 400 }
+    );
+  }
+
+  if (!isValidPhone(phone)) {
+    return NextResponse.json(
+      { error: "Please enter a valid phone number so our team can reach you on WhatsApp." },
+      { status: 400 }
+    );
   }
 
   const lead: LeadInput = { source, name, email, phone, details };

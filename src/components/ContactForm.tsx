@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import type { Dictionary } from "@/lib/i18n";
+import { isValidPhone } from "@/lib/phone";
 
 export default function ContactForm({ dict }: { dict: Dictionary["contactForm"] }) {
   const [status, setStatus] = useState<{ message: string; ok: boolean } | null>(null);
@@ -17,8 +18,13 @@ export default function ContactForm({ dict }: { dict: Dictionary["contactForm"] 
     const projectType = (data.get("project-type") as string)?.trim() ?? "";
     const message = (data.get("message") as string)?.trim() ?? "";
 
-    if (!name || !email || !message) {
+    if (!name || !email || !phone || !message) {
       setStatus({ message: dict.errorRequired, ok: false });
+      return;
+    }
+
+    if (!isValidPhone(phone)) {
+      setStatus({ message: dict.errorPhoneInvalid, ok: false });
       return;
     }
 
@@ -93,6 +99,8 @@ export default function ContactForm({ dict }: { dict: Dictionary["contactForm"] 
             id="phone"
             name="phone"
             type="tel"
+            required
+            placeholder={dict.phonePlaceholder}
             className="w-full border border-neutral-300 px-3 py-2.5 text-sm"
           />
         </div>

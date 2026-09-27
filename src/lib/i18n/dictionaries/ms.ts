@@ -245,7 +245,8 @@ export const ms: Dictionary = {
   contactForm: {
     nameLabel: "Nama",
     emailLabel: "E-mel",
-    phoneLabel: "Telefon (pilihan)",
+    phoneLabel: "Telefon",
+    phonePlaceholder: "+60 12-345 6789",
     projectTypeLabel: "Jenis Projek",
     selectOne: "Pilih satu",
     options: {
@@ -259,7 +260,8 @@ export const ms: Dictionary = {
     messagePlaceholder: "Lokasi, saiz, julat bajet, garis masa, dan apa yang anda harapkan...",
     submitting: "Menghantar...",
     submit: "Hantar Pertanyaan",
-    errorRequired: "Sila isi nama, e-mel, dan butiran projek anda.",
+    errorRequired: "Sila isi nama, e-mel, nombor telefon, dan butiran projek anda.",
+    errorPhoneInvalid: "Sila masukkan nombor telefon yang sah supaya pasukan kami boleh menghubungi anda melalui WhatsApp.",
     errorGeneric: "Berlaku ralat. Sila e-mel inquiry@inzterior.com terus.",
     success: "Terima kasih — kami telah menerima pertanyaan anda dan akan menghubungi anda tidak lama lagi.",
   },
@@ -312,9 +314,12 @@ export const ms: Dictionary = {
     emailEstimateHeading: "Dapatkan anggaran ini melalui e-mel",
     nameLabel: "Nama",
     emailLabel: "E-mel",
+    phoneLabel: "Telefon",
+    phonePlaceholder: "+60 12-345 6789",
     submit: "E-melkan Anggaran Ini",
     submitting: "Menghantar...",
-    errorRequired: "Sila isi nama dan e-mel anda.",
+    errorRequired: "Sila isi nama, e-mel, dan nombor telefon anda.",
+    errorPhoneInvalid: "Sila masukkan nombor telefon yang sah supaya pasukan kami boleh menghubungi anda melalui WhatsApp.",
     errorGeneric: "Berlaku ralat. Sila e-mel inquiry@inzterior.com terus.",
     success:
       "Terima kasih — kami telah menerima permintaan anggaran anda dan akan menghubungi anda tidak lama lagi.",
