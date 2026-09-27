@@ -5,7 +5,7 @@ export type LeadInput = {
   source: string;
   name: string;
   email: string;
-  phone?: string;
+  phone: string;
   details?: string;
 };
 

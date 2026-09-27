@@ -6,7 +6,7 @@ import { getLocale, getDictionary } from "@/lib/i18n";
 export const metadata: Metadata = {
   title: { absolute: "Renovation Cost Estimate for Johor Bahru Homes" },
   description:
-    "A preliminary ringgit range for your Johor Bahru or Iskandar Puteri project, calculated on this page. No obligation, and no phone number required.",
+    "A preliminary ringgit range for your Johor Bahru or Iskandar Puteri project, calculated on this page. No account needed, and no obligation to proceed.",
   alternates: { canonical: `${BASE_URL}/estimate` },
 };
 

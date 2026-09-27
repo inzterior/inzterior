@@ -12,6 +12,7 @@ import {
   type TierId,
 } from "@/lib/pricing";
 import type { Dictionary } from "@/lib/i18n";
+import { isValidPhone } from "@/lib/phone";
 
 const PROPERTY_TYPES = [
   { id: "landed" },
@@ -30,6 +31,7 @@ export default function QuoteCalculator({ dict }: { dict: Dictionary["quoteCalcu
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [leadStatus, setLeadStatus] = useState<{ message: string; ok: boolean } | null>(null);
   const [submitting, setSubmitting] = useState(false);
 
@@ -42,8 +44,13 @@ export default function QuoteCalculator({ dict }: { dict: Dictionary["quoteCalcu
 
   async function handleEmailEstimate(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    if (!name.trim() || !email.trim()) {
+    if (!name.trim() || !email.trim() || !phone.trim()) {
       setLeadStatus({ message: dict.errorRequired, ok: false });
+      return;
+    }
+
+    if (!isValidPhone(phone)) {
+      setLeadStatus({ message: dict.errorPhoneInvalid, ok: false });
       return;
     }
 
@@ -73,6 +80,7 @@ export default function QuoteCalculator({ dict }: { dict: Dictionary["quoteCalcu
           source: "Estimate Calculator",
           name,
           email,
+          phone,
           details,
         }),
       });
@@ -246,6 +254,19 @@ export default function QuoteCalculator({ dict }: { dict: Dictionary["quoteCalcu
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              className="w-full border border-[var(--line)] px-3 py-2.5 text-sm"
+            />
+          </div>
+          <div>
+            <label htmlFor="lead-phone" className="mb-1 block text-xs tracking-wide uppercase">
+              {dict.phoneLabel}
+            </label>
+            <input
+              id="lead-phone"
+              type="tel"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              placeholder={dict.phonePlaceholder}
               className="w-full border border-[var(--line)] px-3 py-2.5 text-sm"
             />
           </div>
